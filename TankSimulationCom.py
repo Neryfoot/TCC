@@ -26,7 +26,7 @@ def device02(ser):  # simulate device behavior
         one_byte = ser.read(1)
         if one_byte == b"\r":
             if buffer[0:3] == b"#02":
-                data = b">" + bytes(Fin.value, "ascii") + b"\r"
+                data = b">" + bytes(str(Fin.value), "ascii") + b"\r"
                 ser.write(data)
             else:
                 data = b"?"
@@ -59,6 +59,6 @@ def dynamic():
 
 
 dynamic_process = Process(target=dynamic)
-dynamic_process.start()
 device02_process = Process(target=device02, args=(ser,))
+dynamic_process.start()
 device02_process.start()

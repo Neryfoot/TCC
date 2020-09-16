@@ -57,8 +57,8 @@ def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output
 
 def read_task():
     data = read_ch(b"02", b"1")
-    data[1:]
-    data[:-1]
+    data = data[1:]
+    data = data[:-1]
     data = float(data)
     print(data)
     lvl.value = data
