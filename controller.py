@@ -5,6 +5,10 @@ from multiprocessing import Process, Value
 
 lvl = Value('f', 0)  # fluxo de entrada
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
+u = Value('f', 0)
+yk_1 = 0
+ref = Value('f', 0.25)
+e_1 = 0
 
 
 def read_data():  # read bytes until read \r(carriage return)
@@ -55,11 +59,30 @@ def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output
     return data
 
 
+def communication():
+    read_task()
+    controller()
+    write_ch(b"03", b"2", bytes(str(u.value), "ascii"))
+    threading.Timer(1, communication).start()
+
+
 def read_task():
     data = read_ch(b"02", b"1")
     data = data[1:]
     data = data[:-1]
     data = float(data)
-    print(data)
     lvl.value = data
-    threading.Timer(1, read_task).start()
+
+
+def controller():
+    global yk_1
+    global e_1
+    e = ref.value - lvl.value
+    yk = 0.1*e + 0.9*e_1 + yk_1
+    if yk > 5:
+        yk = 5
+    if yk < 0:
+        yk = 0
+    e_1 = e
+    yk_1 = yk
+    u.value = yk

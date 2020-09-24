@@ -1,0 +1,135 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Application	serialGUI.py	/^class Application(Frame):$/;"	c
+C	controldesing.py	/^C = ctrl.tf([kp, ki], [1, 0])$/;"	v
+Fin	AnimatedTank.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
+Fin	TankSimulationCom.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
+Fin_update	AnimatedTank.py	/^def Fin_update(val):$/;"	f
+G	controldesing.py	/^G = ctrl.tf(4, [1, 40])$/;"	v
+Refresher	serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
+T	controldesing.py	/^T = ctrl.feedback(C, G)$/;"	v
+V_cc	serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
+__init__	serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
+a	device.py	/^a = device02()     # write a string$/;"	v
+app	serialGUI.py	/^app = Application(master=root)$/;"	v
+ax	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
+ax	animation.py	/^fig, ax = plt.subplots()$/;"	v
+axButton1	animateexample.py	/^axButton1 = plt.axes([0.1, 0.9, 0.1, 0.1])$/;"	v
+axButton2	animateexample.py	/^axButton2 = plt.axes([0.25, 0.9, 0.2, 0.1])$/;"	v
+axSlider1	animateexample.py	/^axSlider1 = plt.axes([0.1, 0.2, 0.8, 0.05])$/;"	v
+axSlider2	animateexample.py	/^axSlider2 = plt.axes([0.1, 0.1, 0.8, 0.05])$/;"	v
+axSlider2	animation.py	/^axSlider2 = plt.axes([0.1, 0.1, 0.8, 0.05])$/;"	v
+bstring	byte.py	/^bstring = b'bstring'$/;"	v
+btn1	animateexample.py	/^btn1 = Button(axButton1, 'Reset')$/;"	v
+btn2	animateexample.py	/^btn2 = Button(axButton2, 'Set Val')$/;"	v
+checksum	DCON.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
+checksum	controller.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
+checksum	request.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
+cid	animateexample.py	/^cid = slider2.on_changed(val_update)$/;"	v
+cid	animation.py	/^cid = slider2.on_changed(val_update)$/;"	v
+comm	serialGUI.py	/^    def comm(self):$/;"	m	class:Application
+comms	serialGUI.py	/^comms = True$/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"0", b"+00.000") $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"0", b"+10.000")  $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"1", b"+00.000") $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"1", b"+10.000")  $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"2", b"+00.000")  $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"2", b"+15.000")  $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"3", b"+00.000")  $/;"	v
+control1	request.py	/^control1 = write_ch(b"03", b"3", b"+10.000") $/;"	v
+createWidgets	serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
+ctrl	controldesing.py	/^import control as ctrl$/;"	I
+device02	TankSimulationCom.py	/^def device02(ser):  # simulate device behavior$/;"	f
+device02	device.py	/^def device02():  # simulate device behavior$/;"	f
+device02_process	TankSimulationCom.py	/^device02_process = Process(target=device02, args=(ser,))$/;"	v
+dynamic	AnimatedTank.py	/^def dynamic():$/;"	f
+dynamic	TankSimulationCom.py	/^def dynamic():$/;"	f
+dynamic	tank.py	/^def dynamic():$/;"	f
+dynamic_process	AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
+dynamic_process	TankSimulationCom.py	/^dynamic_process = Process(target=dynamic)$/;"	v
+exit_protocol	serialGUI.py	/^    def exit_protocol(self):$/;"	m	class:Application
+fig	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
+fig	animation.py	/^fig, ax = plt.subplots()$/;"	v
+fig_loop	AnimatedTank.py	/^def fig_loop(p):$/;"	f
+h	AnimatedTank.py	/^h = 0.1  # passo da solução numérica$/;"	v
+h	TankSimulationCom.py	/^h = 0.1  # passo da solução numérica$/;"	v
+interface	AnimatedTank.py	/^def interface():$/;"	f
+interface_process	AnimatedTank.py	/^interface_process = Process(target=interface)$/;"	v
+isfloat	serialGUI.py	/^def isfloat(x):$/;"	f
+kd	controldesing.py	/^kd = 1$/;"	v
+ki	controldesing.py	/^ki = 1$/;"	v
+kp	controldesing.py	/^kp = 1$/;"	v
+lvl	controller.py	/^lvl = Value('f', 0)  # fluxo de entrada$/;"	v
+module1_ch0	request.py	/^module1_ch0 = read_ch(b"02", b"0") $/;"	v
+module1_ch1	request.py	/^module1_ch1 = read_ch(b"02", b"1") $/;"	v
+module1_ch2	request.py	/^module1_ch2 = read_ch(b"02", b"2") $/;"	v
+module1_ch3	request.py	/^module1_ch3 = read_ch(b"02", b"3") $/;"	v
+module2_ch0	request.py	/^module2_ch0 = read_ch(b"05", b"0") $/;"	v
+module2_ch1	request.py	/^module2_ch1 = read_ch(b"05", b"1") $/;"	v
+module2_ch2	request.py	/^module2_ch2 = read_ch(b"05", b"2") $/;"	v
+module2_ch3	request.py	/^module2_ch3 = read_ch(b"05", b"3") $/;"	v
+module2_ch4	request.py	/^module2_ch4 = read_ch(b"05", b"4") $/;"	v
+module2_ch5	request.py	/^module2_ch5 = read_ch(b"05", b"5") $/;"	v
+new_bstring	byte.py	/^new_bstring = ustring.encode()$/;"	v
+np	controldesing.py	/^import numpy as np$/;"	I
+p	animateexample.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
+p	animation.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
+plt	AnimatedTank.py	/^import matplotlib.pyplot as plt$/;"	I
+plt	animateexample.py	/^import matplotlib.pyplot as plt$/;"	I
+plt	animation.py	/^import matplotlib.pyplot as plt$/;"	I
+plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
+port_name	serialGUI.py	/^port_name = input("Enter a port name: ")      # Python > 2.7$/;"	v
+read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_ch	controller.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_ch	device.py	/^def read_ch(AA: hex, N: hex):  # Readsthe analog input$/;"	f
+read_ch	request.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_ch_ck	DCON.py	/^def read_ch_ck(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_ch_ck	controller.py	/^def read_ch_ck(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_ch_ck	request.py	/^def read_ch_ck(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+read_data	DCON.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
+read_data	TankSimulationCom.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
+read_data	controller.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
+read_data	device.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
+read_data	request.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
+read_task	controller.py	/^def read_task():$/;"	f
+resetSliders	animateexample.py	/^def resetSliders(event):$/;"	f
+root	serialGUI.py	/^root = Tk()$/;"	v
+say_msg	serialGUI.py	/^    def say_msg(self):$/;"	m	class:Application
+ser	TankSimulationCom.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	controller.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	device.py	/^ser = serial.Serial('\/dev\/ttyUSB0')  # open serial port$/;"	v
+ser	example1.py	/^ser = serial.Serial('\/dev\/ttyUSB0')  # open serial port$/;"	v
+ser	request.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	serialGUI.py	/^ser = serial.Serial($/;"	v
+setValue	animateexample.py	/^def setValue(val):$/;"	f
+slider1	animateexample.py	/^slider1 = Slider(axSlider1, 'Slider1', valmin=0, valmax=100)$/;"	v
+slider2	animateexample.py	/^slider2 = Slider($/;"	v
+slider2	animation.py	/^slider2 = Slider($/;"	v
+step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
+step	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
+t	controldesing.py	/^t = np.arange(0, 10, 0.01)$/;"	v
+t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
+t	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
+ustring	byte.py	/^ustring = 'A unicode string'$/;"	v
+val_update	animateexample.py	/^def val_update(val):$/;"	f
+val_update	animation.py	/^def val_update(val):$/;"	f
+write_ch	DCON.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
+write_ch	controller.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
+write_ch	request.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
+write_ch_ck	DCON.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
+write_ch_ck	controller.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
+write_ch_ck	request.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
+x	animateexample.py	/^x = list(range(0, 11))$/;"	v
+x	animation.py	/^x = list(range(0, 11))$/;"	v
+y	animateexample.py	/^y = [10]*11$/;"	v
+y	animation.py	/^y = [10]*11$/;"	v
+yk_1	AnimatedTank.py	/^yk_1 = 0  # condição inicial$/;"	v
+yk_1	TankSimulationCom.py	/^yk_1 = 0  # condição inicial$/;"	v
+yk_sync	AnimatedTank.py	/^yk_sync = Value('f', 0)  # condição inicial$/;"	v
+yk_sync	TankSimulationCom.py	/^yk_sync = Value('f', 0)  # condição inicial$/;"	v
