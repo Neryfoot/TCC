@@ -31,8 +31,6 @@ def read_ch(AA: bytes, N: bytes):  # Read sthe analog input
 def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output
     command = b"#" + AA + N + data + b"\r"  # command in bytes array
     ser.write(command)  # command example #AAN20.000, sets 20mA as output
-    data = read_data()  # reads response
-    return data
 
 
 def checksum(cmd: bytes):  # calculates the checksum of command string
@@ -72,6 +70,7 @@ def read_task():
     data = data[:-1]
     data = float(data)
     lvl.value = data
+    print('ok')
 
 
 def controller():
@@ -86,3 +85,9 @@ def controller():
     e_1 = e
     yk_1 = yk
     u.value = yk
+    print(yk)
+
+
+communication()
+read_task()
+write_ch(b"03", b"2", bytes(str(u.value), "ascii"))
