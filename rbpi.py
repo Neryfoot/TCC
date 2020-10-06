@@ -2,7 +2,10 @@ import serial
 import time
 import threading
 from multiprocessing import Process, Value
+from opcua import Server
+import server as s
 
+url = "opc.tcp://192.168.15.48:2194"
 lvl = Value('f', 0)  # fluxo de entrada
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
 u = Value('f', 0)
@@ -75,6 +78,15 @@ def read_task(ser):
     print('ok')
 
 
+def read_task(ser):
+    data = read_ch(b"02", b"1", ser)
+    data = data[1:]
+    data = data[:-1]
+    data = float(data)
+    lvl.value = data
+    print('ok')
+
+
 def controller():
     global yk_1
     global e_1
@@ -90,8 +102,12 @@ def controller():
     print(yk)
 
 
+server = s.start_server(url)
+server.stop()
 communication(ser)
 read_task(ser)
 write_ch(b"03", b"2", bytes(str(u.value), "ascii"), ser)
 ref.value
 ref.value=0.3
+stop_flag = 1
+
