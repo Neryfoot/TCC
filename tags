@@ -64,9 +64,19 @@ dynamic	AnimatedTank.py	/^def dynamic():$/;"	f
 dynamic	TankSimulationSER.py	/^def dynamic():$/;"	f
 dynamic	tank.py	/^def dynamic():$/;"	f
 dynamic1	TankSimulationOPCUA.py	/^def dynamic1():$/;"	f
+dynamic2	TankSimulationOPCUA.py	/^def dynamic2():$/;"	f
+dynamic3	TankSimulationOPCUA.py	/^def dynamic3():$/;"	f
+dynamic4	TankSimulationOPCUA.py	/^def dynamic4():$/;"	f
+dynamic5	TankSimulationOPCUA.py	/^def dynamic5():$/;"	f
+dynamic6	TankSimulationOPCUA.py	/^def dynamic6():$/;"	f
 dynamic_process	AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process	TankSimulationSER.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process1	TankSimulationOPCUA.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
+dynamic_process2	TankSimulationOPCUA.py	/^dynamic_process2 = Process(target=dynamic2)$/;"	v
+dynamic_process3	TankSimulationOPCUA.py	/^dynamic_process3 = Process(target=dynamic3)$/;"	v
+dynamic_process4	TankSimulationOPCUA.py	/^dynamic_process4 = Process(target=dynamic4)$/;"	v
+dynamic_process5	TankSimulationOPCUA.py	/^dynamic_process5 = Process(target=dynamic5)$/;"	v
+dynamic_process6	TankSimulationOPCUA.py	/^dynamic_process6 = Process(target=dynamic6)$/;"	v
 e_1	controller.py	/^e_1 = 0$/;"	v
 exit_protocol	serialGUI.py	/^    def exit_protocol(self):$/;"	m	class:Application
 f1	TankSimulationOPCUA.py	/^f1 = Value('f', 0) # vazão de entrada$/;"	v
@@ -169,6 +179,9 @@ start_server	server.py	/^def start_server(url):$/;"	f
 state	serverexample.py	/^state = bulb.add_variable(2, "State of Light Bulb", False)$/;"	v
 step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 step	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
+stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0 # flag para parar os processos$/;"	v
+stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0$/;"	v
+stop_flag	TankSimulationOPCUA.py	/^stop_flag = 1$/;"	v
 stop_flag	controller.py	/^stop_flag = 0$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 1$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
@@ -180,11 +193,11 @@ tempsens	serverexample.py	/^tempsens = objects.add_object('ns=2; s="TS1"', "Temp
 top_flag	rbpi.py	/^top_flag = 0$/;"	v
 u	controller.py	/^u = Value('f', 0)$/;"	v
 u1	TankSimulationOPCUA.py	/^u1 = Value('f', 4.0)  # fluxo de entrada$/;"	v
-u2	TankSimulationOPCUA.py	/^u2 = Value('f', 4.0)  # fluxo de entrada$/;"	v
-u3	TankSimulationOPCUA.py	/^u3 = Value('f', 4.0)  # fluxo de entrada$/;"	v
-u4	TankSimulationOPCUA.py	/^u4 = Value('f', 4.0)  # fluxo de entrada$/;"	v
-u5	TankSimulationOPCUA.py	/^u5 = Value('f', 4.0)  # fluxo de entrada$/;"	v
-u6	TankSimulationOPCUA.py	/^u6 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u2	TankSimulationOPCUA.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
+u3	TankSimulationOPCUA.py	/^u3 = Value('f', 3.0)  # fluxo de entrada$/;"	v
+u4	TankSimulationOPCUA.py	/^u4 = Value('f', 2.5)  # fluxo de entrada$/;"	v
+u5	TankSimulationOPCUA.py	/^u5 = Value('f', 2.0)  # fluxo de entrada$/;"	v
+u6	TankSimulationOPCUA.py	/^u6 = Value('f', 1.0)  # fluxo de entrada$/;"	v
 update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
 ustring	byte.py	/^ustring = 'A unicode string'$/;"	v
