@@ -10,7 +10,7 @@ Application	serialGUI.py	/^class Application(Frame):$/;"	c
 C	controldesing.py	/^C = ctrl.tf([kd, kp, ki], [1, 0])$/;"	v
 Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 0.1, method='zoh')$/;"	v
 Fin	AnimatedTank.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
-Fin	TankSimulationCom.py	/^Fin = Value('f', 4.0)  # fluxo de entrada$/;"	v
+Fin	TankSimulationSER.py	/^Fin = Value('f', 4.0)  # fluxo de entrada$/;"	v
 Fin_update	AnimatedTank.py	/^def Fin_update(val):$/;"	f
 G	controldesing.py	/^G = ctrl.tf(4, [1, 40])$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.001, method='zoh')$/;"	v
@@ -19,7 +19,7 @@ T	controldesing.py	/^T = ctrl.feedback(C*G*10)$/;"	v
 V_cc	serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
 __init__	serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
 a	device.py	/^a = device02()     # write a string$/;"	v
-addspace	server.py	/^addspace = server.register_namespace(name)$/;"	v
+addspace	rbpi.py	/^addspace = server.register_namespace(name)$/;"	v
 app	serialGUI.py	/^app = Application(master=root)$/;"	v
 ax	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
 ax	animation.py	/^fig, ax = plt.subplots()$/;"	v
@@ -32,15 +32,17 @@ bstring	byte.py	/^bstring = b'bstring'$/;"	v
 btn1	animateexample.py	/^btn1 = Button(axButton1, 'Reset')$/;"	v
 btn2	animateexample.py	/^btn2 = Button(axButton2, 'Set Val')$/;"	v
 bulb	serverexample.py	/^bulb = objects.add_object(2, "Light Bulb")$/;"	v
-checksum	DCON.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
 checksum	request.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
 cid	animateexample.py	/^cid = slider2.on_changed(val_update)$/;"	v
 cid	animation.py	/^cid = slider2.on_changed(val_update)$/;"	v
-com_process	TankSimulationCom.py	/^com_process = Process(target=communication, args=(ser,))$/;"	v
+com_process	TankSimulationOPCUA.py	/^com_process = Process(target=communication, args=(ser,))$/;"	v
+com_process	TankSimulationSER.py	/^com_process = Process(target=communication, args=(ser,))$/;"	v
 comm	serialGUI.py	/^    def comm(self):$/;"	m	class:Application
 comms	serialGUI.py	/^comms = True$/;"	v
-communication	TankSimulationCom.py	/^def communication(ser):  # simulate device behavior$/;"	f
+communication	TankSimulationOPCUA.py	/^def communication(ser):  # simulate device behavior$/;"	f
+communication	TankSimulationSER.py	/^def communication(ser):  # simulate device behavior$/;"	f
 communication	controller.py	/^def communication(ser):$/;"	f
+communication	rbpi.py	/^def communication(ser):$/;"	f
 control1	request.py	/^control1 = write_ch(b"03", b"0", b"+00.000") $/;"	v
 control1	request.py	/^control1 = write_ch(b"03", b"0", b"+10.000")  $/;"	v
 control1	request.py	/^control1 = write_ch(b"03", b"1", b"+00.000") $/;"	v
@@ -52,26 +54,43 @@ control1	request.py	/^control1 = write_ch(b"03", b"3", b"+10.000") $/;"	v
 controller	controller.py	/^def controller():$/;"	f
 createWidgets	serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
-device02	TankSimulationCom.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
+device02	TankSimulationOPCUA.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
+device02	TankSimulationSER.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	device.py	/^def device02():  # simulate device behavior$/;"	f
-device03	TankSimulationCom.py	/^def device03(buffer, ser):  # simulate device behavior$/;"	f
+device03	TankSimulationOPCUA.py	/^def device03(buffer, ser):  # simulate device behavior $/;"	f
+device03	TankSimulationSER.py	/^def device03(buffer, ser):  # simulate device behavior$/;"	f
+device05	TankSimulationOPCUA.py	/^def device05(buffer, ser):  # simulate device behavior$/;"	f
 dynamic	AnimatedTank.py	/^def dynamic():$/;"	f
-dynamic	TankSimulationCom.py	/^def dynamic():$/;"	f
+dynamic	TankSimulationSER.py	/^def dynamic():$/;"	f
 dynamic	tank.py	/^def dynamic():$/;"	f
+dynamic1	TankSimulationOPCUA.py	/^def dynamic1():$/;"	f
 dynamic_process	AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
-dynamic_process	TankSimulationCom.py	/^dynamic_process = Process(target=dynamic)$/;"	v
+dynamic_process	TankSimulationSER.py	/^dynamic_process = Process(target=dynamic)$/;"	v
+dynamic_process1	TankSimulationOPCUA.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
 e_1	controller.py	/^e_1 = 0$/;"	v
 exit_protocol	serialGUI.py	/^    def exit_protocol(self):$/;"	m	class:Application
+f1	TankSimulationOPCUA.py	/^f1 = Value('f', 0) # vazão de entrada$/;"	v
+f2	TankSimulationOPCUA.py	/^f2 = Value('f', 1) # vazão de entrada$/;"	v
+f3	TankSimulationOPCUA.py	/^f3 = Value('f', 2) # vazão de entrada$/;"	v
+f4	TankSimulationOPCUA.py	/^f4 = Value('f', 3) # vazão de entrada$/;"	v
 fig	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
 fig	animation.py	/^fig, ax = plt.subplots()$/;"	v
 fig_loop	AnimatedTank.py	/^def fig_loop(p):$/;"	f
-flow	server.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
-flow1	server.py	/^flow1 = flow.add_variable(addspace, "FLOW1", 1)$/;"	v
-flow2	server.py	/^flow2 = flow.add_variable(addspace, "FLOW2", 2)$/;"	v
-flow3	server.py	/^flow3 = flow.add_variable(addspace, "FLOW3", 3)$/;"	v
-flow4	server.py	/^flow4 = flow.add_variable(addspace, "FLOW4", 4)$/;"	v
+flow	rbpi.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
+flow1	rbpi.py	/^flow1 = flow.add_variable(addspace, "FLOW1", 1)$/;"	v
+flow2	rbpi.py	/^flow2 = flow.add_variable(addspace, "FLOW2", 2)$/;"	v
+flow3	rbpi.py	/^flow3 = flow.add_variable(addspace, "FLOW3", 3)$/;"	v
+flow4	rbpi.py	/^flow4 = flow.add_variable(addspace, "FLOW4", 4)$/;"	v
+flows	rbpi.py	/^flows = [flow1, flow2, flow3, flow4]$/;"	v
 h	AnimatedTank.py	/^h = 0.1  # passo da solução numérica$/;"	v
-h	TankSimulationCom.py	/^h = 0.1  # passo da solução numérica$/;"	v
+h	TankSimulationOPCUA.py	/^h = 0.1  # passo da solução numérica$/;"	v
+h	TankSimulationSER.py	/^h = 0.1  # passo da solução numérica$/;"	v
+h1	TankSimulationOPCUA.py	/^h1 = Value('f', 0)  # condição inicial de nivel$/;"	v
+h2	TankSimulationOPCUA.py	/^h2 = Value('f', 0)  # condição inicial de nivel$/;"	v
+h3	TankSimulationOPCUA.py	/^h3 = Value('f', 0)  # condição inicial de nivel$/;"	v
+h4	TankSimulationOPCUA.py	/^h4 = Value('f', 0)  # condição inicial de nivel$/;"	v
+h5	TankSimulationOPCUA.py	/^h5 = Value('f', 0)  # condição inicial de nivel$/;"	v
+h6	TankSimulationOPCUA.py	/^h6 = Value('f', 0)  # condição inicial de nivel$/;"	v
 interface	AnimatedTank.py	/^def interface():$/;"	f
 interface_process	AnimatedTank.py	/^interface_process = Process(target=interface)$/;"	v
 isfloat	serialGUI.py	/^def isfloat(x):$/;"	f
@@ -79,13 +98,14 @@ kd	controldesing.py	/^kd = 0$/;"	v
 ki	controldesing.py	/^ki = 10$/;"	v
 kp	controldesing.py	/^kp = .1$/;"	v
 lvl	controller.py	/^lvl = Value('f', 0)  # fluxo de entrada$/;"	v
-lvl	server.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
-lvl1	server.py	/^lvl1 = lvl.add_variable(addspace, "LVL1", 5)$/;"	v
-lvl2	server.py	/^lvl2 = lvl.add_variable(addspace, "LVL2", 6)$/;"	v
-lvl3	server.py	/^lvl3 = lvl.add_variable(addspace, "LVL3", 7)$/;"	v
-lvl4	server.py	/^lvl4 = lvl.add_variable(addspace, "LVL4", 8)$/;"	v
-lvl5	server.py	/^lvl5 = lvl.add_variable(addspace, "LVL5", 9)$/;"	v
-lvl6	server.py	/^lvl6 = lvl.add_variable(addspace, "LVL6", 10)$/;"	v
+lvl	rbpi.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
+lvl1	rbpi.py	/^lvl1 = lvl.add_variable(addspace, "LVL1", 5)$/;"	v
+lvl2	rbpi.py	/^lvl2 = lvl.add_variable(addspace, "LVL2", 6)$/;"	v
+lvl3	rbpi.py	/^lvl3 = lvl.add_variable(addspace, "LVL3", 7)$/;"	v
+lvl4	rbpi.py	/^lvl4 = lvl.add_variable(addspace, "LVL4", 8)$/;"	v
+lvl5	rbpi.py	/^lvl5 = lvl.add_variable(addspace, "LVL5", 9)$/;"	v
+lvl6	rbpi.py	/^lvl6 = lvl.add_variable(addspace, "LVL6", 10)$/;"	v
+lvls	rbpi.py	/^lvls = [lvl1, lvl2, lvl3, lvl4, lvl5, lvl6]$/;"	v
 module1_ch0	request.py	/^module1_ch0 = read_ch(b"02", b"0") $/;"	v
 module1_ch1	request.py	/^module1_ch1 = read_ch(b"02", b"1") $/;"	v
 module1_ch2	request.py	/^module1_ch2 = read_ch(b"02", b"2") $/;"	v
@@ -96,9 +116,9 @@ module2_ch2	request.py	/^module2_ch2 = read_ch(b"05", b"2") $/;"	v
 module2_ch3	request.py	/^module2_ch3 = read_ch(b"05", b"3") $/;"	v
 module2_ch4	request.py	/^module2_ch4 = read_ch(b"05", b"4") $/;"	v
 module2_ch5	request.py	/^module2_ch5 = read_ch(b"05", b"5") $/;"	v
-name	server.py	/^name = "OPC UA Simulation Server"$/;"	v
+name	rbpi.py	/^name = "OPC UA Simulation Server"$/;"	v
 new_bstring	byte.py	/^new_bstring = ustring.encode()$/;"	v
-node	server.py	/^node = server.get_objects_node()$/;"	v
+node	rbpi.py	/^node = server.get_objects_node()$/;"	v
 np	controldesing.py	/^import numpy as np$/;"	I
 objects	serverexample.py	/^objects = server.get_objects_node()$/;"	v
 p	animateexample.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
@@ -108,21 +128,21 @@ plt	animateexample.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	animation.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
 port_name	serialGUI.py	/^port_name = input("Enter a port name: ")      # Python > 2.7$/;"	v
-pump	server.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
-pump1	server.py	/^pump1 = pump.add_variable(addspace, "PUMP1", 0.1)$/;"	v
-pump2	server.py	/^pump2 = pump.add_variable(addspace, "PUMP2", 0.2)$/;"	v
-pump3	server.py	/^pump3 = pump.add_variable(addspace, "PUMP3", 0.3)$/;"	v
-pump4	server.py	/^pump4 = pump.add_variable(addspace, "PUMP4", 0.4)$/;"	v
-pump5	server.py	/^pump5 = pump.add_variable(addspace, "PUMP5", 0.5)$/;"	v
-pump6	server.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.6)$/;"	v
-read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
+pump	rbpi.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
+pump1	rbpi.py	/^pump1 = pump.add_variable(addspace, "PUMP1", 0.1)$/;"	v
+pump2	rbpi.py	/^pump2 = pump.add_variable(addspace, "PUMP2", 0.2)$/;"	v
+pump3	rbpi.py	/^pump3 = pump.add_variable(addspace, "PUMP3", 0.3)$/;"	v
+pump4	rbpi.py	/^pump4 = pump.add_variable(addspace, "PUMP4", 0.4)$/;"	v
+pump5	rbpi.py	/^pump5 = pump.add_variable(addspace, "PUMP5", 0.5)$/;"	v
+pump6	rbpi.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.6)$/;"	v
+read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	controller.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	device.py	/^def read_ch(AA: hex, N: hex):  # Readsthe analog input$/;"	f
 read_ch	request.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
-read_ch_ck	DCON.py	/^def read_ch_ck(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
 read_ch_ck	request.py	/^def read_ch_ck(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
-read_data	DCON.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
-read_data	TankSimulationCom.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
+read_data	DCON.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
+read_data	TankSimulationOPCUA.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
+read_data	TankSimulationSER.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
 read_data	controller.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
 read_data	device.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
 read_data	request.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
@@ -131,43 +151,56 @@ ref	controller.py	/^ref = Value('f', 0.25)$/;"	v
 resetSliders	animateexample.py	/^def resetSliders(event):$/;"	f
 root	serialGUI.py	/^root = Tk()$/;"	v
 say_msg	serialGUI.py	/^    def say_msg(self):$/;"	m	class:Application
-ser	TankSimulationCom.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	TankSimulationOPCUA.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	TankSimulationSER.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
 ser	controller.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
 ser	device.py	/^ser = serial.Serial('\/dev\/ttyUSB0')  # open serial port$/;"	v
 ser	example1.py	/^ser = serial.Serial('\/dev\/ttyUSB0')  # open serial port$/;"	v
+ser	rbpi.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
 ser	request.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
 ser	serialGUI.py	/^ser = serial.Serial($/;"	v
-server	server.py	/^server = Server()$/;"	v
+server	rbpi.py	/^server = Server()$/;"	v
 server	serverexample.py	/^server = Server()$/;"	v
 setValue	animateexample.py	/^def setValue(val):$/;"	f
 slider1	animateexample.py	/^slider1 = Slider(axSlider1, 'Slider1', valmin=0, valmax=100)$/;"	v
 slider2	animateexample.py	/^slider2 = Slider($/;"	v
 slider2	animation.py	/^slider2 = Slider($/;"	v
+start_server	server.py	/^def start_server(url):$/;"	f
 state	serverexample.py	/^state = bulb.add_variable(2, "State of Light Bulb", False)$/;"	v
 step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 step	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
+stop_flag	controller.py	/^stop_flag = 0$/;"	v
+stop_flag	rbpi.py	/^stop_flag = 1$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
 t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 t	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
 temp	serverexample.py	/^temp = tempsens.add_variable('ns=2; s="TS1_Temperature"',  "TS1 Temperature",  12345678)$/;"	v
 temperature	serverexample.py	/^temperature = 20.0$/;"	v
 tempsens	serverexample.py	/^tempsens = objects.add_object('ns=2; s="TS1"', "Temperature Sensor1")$/;"	v
+top_flag	rbpi.py	/^top_flag = 0$/;"	v
 u	controller.py	/^u = Value('f', 0)$/;"	v
-url	server.py	/^url = "opc.tcp:\/\/192.168.15.17:2194"$/;"	v
+u1	TankSimulationOPCUA.py	/^u1 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u2	TankSimulationOPCUA.py	/^u2 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u3	TankSimulationOPCUA.py	/^u3 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u4	TankSimulationOPCUA.py	/^u4 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u5	TankSimulationOPCUA.py	/^u5 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+u6	TankSimulationOPCUA.py	/^u6 = Value('f', 4.0)  # fluxo de entrada$/;"	v
+update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
+url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
 ustring	byte.py	/^ustring = 'A unicode string'$/;"	v
 val_update	animateexample.py	/^def val_update(val):$/;"	f
 val_update	animation.py	/^def val_update(val):$/;"	f
-write_ch	DCON.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
+write_ch	DCON.py	/^def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output$/;"	f
 write_ch	controller.py	/^def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output$/;"	f
 write_ch	request.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
-write_ch_ck	DCON.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
 write_ch_ck	request.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
 x	animateexample.py	/^x = list(range(0, 11))$/;"	v
 x	animation.py	/^x = list(range(0, 11))$/;"	v
 y	animateexample.py	/^y = [10]*11$/;"	v
 y	animation.py	/^y = [10]*11$/;"	v
 yk_1	AnimatedTank.py	/^yk_1 = 0  # condição inicial$/;"	v
-yk_1	TankSimulationCom.py	/^yk_1 = 0  # condição inicial$/;"	v
+yk_1	TankSimulationOPCUA.py	/^yk_1 = 0  # condição inicial$/;"	v
+yk_1	TankSimulationSER.py	/^yk_1 = 0  # condição inicial$/;"	v
 yk_1	controller.py	/^yk_1 = 0$/;"	v
 yk_sync	AnimatedTank.py	/^yk_sync = Value('f', 0)  # condição inicial$/;"	v
-yk_sync	TankSimulationCom.py	/^yk_sync = Value('f', 0)  # condição inicial$/;"	v
+yk_sync	TankSimulationSER.py	/^yk_sync = Value('f', 0)  # condição inicial$/;"	v

@@ -3,111 +3,63 @@ import time
 import threading
 from multiprocessing import Process, Value
 from opcua import Server
-import server as s
+import DCON
 
 url = "opc.tcp://192.168.15.48:2194"
-lvl = Value('f', 0)  # fluxo de entrada
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
-u = Value('f', 0)
-yk_1 = 0
-ref = Value('f', 0.25)
-e_1 = 0
-stop_flag = 0
+top_flag = 0
+
+server = Server()
+server.set_endpoint(url)
+name = "OPC UA Simulation Server"
+addspace = server.register_namespace(name)
+
+node = server.get_objects_node()
+
+lvl = node.add_object(addspace, "Level Sensors")
+lvl1 = lvl.add_variable(addspace, "LVL1", 5)
+lvl2 = lvl.add_variable(addspace, "LVL2", 6)
+lvl3 = lvl.add_variable(addspace, "LVL3", 7)
+lvl4 = lvl.add_variable(addspace, "LVL4", 8)
+lvl5 = lvl.add_variable(addspace, "LVL5", 9)
+lvl6 = lvl.add_variable(addspace, "LVL6", 10)
+
+flow = node.add_object(addspace, "Flow Sensors")
+flow1 = flow.add_variable(addspace, "FLOW1", 1)
+flow2 = flow.add_variable(addspace, "FLOW2", 2)
+flow3 = flow.add_variable(addspace, "FLOW3", 3)
+flow4 = flow.add_variable(addspace, "FLOW4", 4)
+
+pump = node.add_object(addspace, "Pump Actuators")
+pump1 = pump.add_variable(addspace, "PUMP1", 0.1)
+pump2 = pump.add_variable(addspace, "PUMP2", 0.2)
+pump3 = pump.add_variable(addspace, "PUMP3", 0.3)
+pump4 = pump.add_variable(addspace, "PUMP4", 0.4)
+pump5 = pump.add_variable(addspace, "PUMP5", 0.5)
+pump6 = pump.add_variable(addspace, "PUMP6", 0.6)
+
+flows = [flow1, flow2, flow3, flow4]
+lvls = [lvl1, lvl2, lvl3, lvl4, lvl5, lvl6]
 
 
-def read_data(ser):  # read bytes until read \r(carriage return)
-    buffer = ""
-    while True:
-        one_byte = ser.read(1)
-        if one_byte == b"\r":    # method should returns bytes
-            return buffer
-        else:
-            buffer += one_byte.decode()
-
-
-def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input
-    command = b"#" + AA + N + b"\r"  # command in hex array
-    ser.write(command)
-    data = read_data(ser)  # reads response
-    return data
-
-
-def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output
-    command = b"#" + AA + N + data + b"\r"  # command in bytes array
-    ser.write(command)  # command example #AAN20.000, sets 20mA as output
-
-
-# def checksum(cmd: bytes):  # calculates the checksum of command string
-#     cmd = cmd[:-1]  # deletes CR from the command
-#     ck = sum(cmd) & 0xFF  # checksum is equal to sum masked by 0xFF
-#     ck = hex(ck)  # gets hexadecimal representation string
-#     ck = bytes(ck[2]+ck[3], "ascii")  # gets ascii value of those characters
-#     return ck
-
-
-# def read_ch_ck(AA: bytes, N: bytes, ser):  # Read sthe analog input
-#     command = b"#" + AA + N + b"\r"  # command in hex array
-#     command = command[:-1] + checksum(command) + b"\r"  # add checksum 
-#     ser.write(command)
-#     data = read_data()  # reads response
-#     return data
-
-
-# def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output
-#     command = b"#" + AA + N + data + b"\r"  # command in bytes array
-#     command = command[:-1] + checksum(command) + b"\r"  # add checksum 
-#     ser.write(command)  # command example #AAN20.000, sets 20mA as output
-#     data = read_data()  # reads response
-#     return data
+def update_variable(variable, AA: bytes, N: bytes, ser):
+    data = DCON.read_ch(AA, N, ser)
+    data = data[1:]
+    data = data[:-1]
+    data = float(data)
+    variable.set_data(data)
 
 
 def communication(ser):
-    read_task(ser)
-    controller()
-    write_ch(b"03", b"2", bytes(str(u.value), "ascii"), ser)
+    global flows
+    for i in range(4):
+        update_variable(flows[i], b"02", bytes(str(i), 'ascii'), ser)
+    for i in range(6):
+        update_variable(flows[i], b"05", bytes(str(i), 'ascii'), ser)
     if stop_flag == 0:
-        threading.Timer(1, communication, args=[ser,]).start()
+    threading.Timer(1, communication, args=[ser,]).start()
 
 
-def read_task(ser):
-    data = read_ch(b"02", b"1", ser)
-    data = data[1:]
-    data = data[:-1]
-    data = float(data)
-    lvl.value = data
-    print('ok')
-
-
-def read_task(ser):
-    data = read_ch(b"02", b"1", ser)
-    data = data[1:]
-    data = data[:-1]
-    data = float(data)
-    lvl.value = data
-    print('ok')
-
-
-def controller():
-    global yk_1
-    global e_1
-    e = ref.value - lvl.value
-    yk = 0.1*e + 0.9*e_1 + yk_1
-    if yk > 5:
-        yk = 5
-    if yk < 0:
-        yk = 0
-    e_1 = e
-    yk_1 = yk
-    u.value = yk
-    print(yk)
-
-
-server = s.start_server(url)
-server.stop()
+server.start()
 communication(ser)
-read_task(ser)
-write_ch(b"03", b"2", bytes(str(u.value), "ascii"), ser)
-ref.value
-ref.value=0.3
 stop_flag = 1
-
