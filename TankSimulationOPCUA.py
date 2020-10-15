@@ -66,8 +66,7 @@ def communication(ser):  # simulate device behavior
 
 
 def device02(buffer, ser):  # simulate device behavior
-    case = buffer[3:]
-    case = int(case)
+    case = int(chr(buffer[3]))
     if case == 0:
         data = b">" + bytes(str(f1.value), "ascii") + b"\r"
         ser.write(data)
@@ -83,8 +82,7 @@ def device02(buffer, ser):  # simulate device behavior
 
 
 def device05(buffer, ser):  # simulate device behavior
-    case = buffer[3:]
-    case = int(case)
+    case = int(chr(buffer[3]))
     if case == 0:
         data = b">" + bytes(str(h1.value), "ascii") + b"\r"
         ser.write(data)
@@ -107,10 +105,9 @@ def device05(buffer, ser):  # simulate device behavior
 
 
 def device03(buffer, ser):  # simulate device behavior 
+    case = int(chr(buffer[3]))
     data = buffer
-    case = data[3:] # pega o canal a ser lido
-    case = int(case)
-    data = data[4:]
+    data = data[5:]
     data = data[:-1]
     data = float(data) #retirou caracteres do protocolo
     if case == 0:
