@@ -87,10 +87,10 @@ fig	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
 fig	animation.py	/^fig, ax = plt.subplots()$/;"	v
 fig_loop	AnimatedTank.py	/^def fig_loop(p):$/;"	f
 flow	rbpi.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
-flow1	rbpi.py	/^flow1 = flow.add_variable(addspace, "FLOW1", 1.0)$/;"	v
-flow2	rbpi.py	/^flow2 = flow.add_variable(addspace, "FLOW2", 2.0)$/;"	v
-flow3	rbpi.py	/^flow3 = flow.add_variable(addspace, "FLOW3", 3.0)$/;"	v
-flow4	rbpi.py	/^flow4 = flow.add_variable(addspace, "FLOW4", 4.0)$/;"	v
+flow1	rbpi.py	/^flow1 = flow.add_variable(addspace, "FLOW1", 0.0)$/;"	v
+flow2	rbpi.py	/^flow2 = flow.add_variable(addspace, "FLOW2", 0.0)$/;"	v
+flow3	rbpi.py	/^flow3 = flow.add_variable(addspace, "FLOW3", 0.0)$/;"	v
+flow4	rbpi.py	/^flow4 = flow.add_variable(addspace, "FLOW4", 0.0)$/;"	v
 flows	rbpi.py	/^flows = [flow1, flow2, flow3, flow4]$/;"	v
 h	AnimatedTank.py	/^h = 0.1  # passo da solução numérica$/;"	v
 h	TankSimulationOPCUA.py	/^h = 0.1  # passo da solução numérica$/;"	v
@@ -109,12 +109,12 @@ ki	controldesing.py	/^ki = 10$/;"	v
 kp	controldesing.py	/^kp = .1$/;"	v
 lvl	controller.py	/^lvl = Value('f', 0)  # fluxo de entrada$/;"	v
 lvl	rbpi.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
-lvl1	rbpi.py	/^lvl1 = lvl.add_variable(addspace, "LVL1", 5.0)$/;"	v
-lvl2	rbpi.py	/^lvl2 = lvl.add_variable(addspace, "LVL2", 6.0)$/;"	v
-lvl3	rbpi.py	/^lvl3 = lvl.add_variable(addspace, "LVL3", 7.0)$/;"	v
-lvl4	rbpi.py	/^lvl4 = lvl.add_variable(addspace, "LVL4", 8.0)$/;"	v
-lvl5	rbpi.py	/^lvl5 = lvl.add_variable(addspace, "LVL5", 9.0)$/;"	v
-lvl6	rbpi.py	/^lvl6 = lvl.add_variable(addspace, "LVL6", 10.0)$/;"	v
+lvl1	rbpi.py	/^lvl1 = lvl.add_variable(addspace, "LVL1", 0.0)$/;"	v
+lvl2	rbpi.py	/^lvl2 = lvl.add_variable(addspace, "LVL2", 0.0)$/;"	v
+lvl3	rbpi.py	/^lvl3 = lvl.add_variable(addspace, "LVL3", 0.0)$/;"	v
+lvl4	rbpi.py	/^lvl4 = lvl.add_variable(addspace, "LVL4", 0.0)$/;"	v
+lvl5	rbpi.py	/^lvl5 = lvl.add_variable(addspace, "LVL5", 0.0)$/;"	v
+lvl6	rbpi.py	/^lvl6 = lvl.add_variable(addspace, "LVL6", 0.0)$/;"	v
 lvls	rbpi.py	/^lvls = [lvl1, lvl2, lvl3, lvl4, lvl5, lvl6]$/;"	v
 module1_ch0	request.py	/^module1_ch0 = read_ch(b"02", b"0") $/;"	v
 module1_ch1	request.py	/^module1_ch1 = read_ch(b"02", b"1") $/;"	v
@@ -139,12 +139,13 @@ plt	animation.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
 port_name	serialGUI.py	/^port_name = input("Enter a port name: ")      # Python > 2.7$/;"	v
 pump	rbpi.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
-pump1	rbpi.py	/^pump1 = pump.add_variable(addspace, "PUMP1", 0.1)$/;"	v
-pump2	rbpi.py	/^pump2 = pump.add_variable(addspace, "PUMP2", 0.2)$/;"	v
-pump3	rbpi.py	/^pump3 = pump.add_variable(addspace, "PUMP3", 0.3)$/;"	v
-pump4	rbpi.py	/^pump4 = pump.add_variable(addspace, "PUMP4", 0.4)$/;"	v
-pump5	rbpi.py	/^pump5 = pump.add_variable(addspace, "PUMP5", 0.5)$/;"	v
-pump6	rbpi.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.6)$/;"	v
+pump1	rbpi.py	/^pump1 = pump.add_variable(addspace, "PUMP1", 0.0)$/;"	v
+pump2	rbpi.py	/^pump2 = pump.add_variable(addspace, "PUMP2", 0.0)$/;"	v
+pump3	rbpi.py	/^pump3 = pump.add_variable(addspace, "PUMP3", 0.0)$/;"	v
+pump4	rbpi.py	/^pump4 = pump.add_variable(addspace, "PUMP4", 0.0)$/;"	v
+pump5	rbpi.py	/^pump5 = pump.add_variable(addspace, "PUMP5", 0.0)$/;"	v
+pump6	rbpi.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.0)$/;"	v
+pumps	rbpi.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
 read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	controller.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	device.py	/^def read_ch(AA: hex, N: hex):  # Readsthe analog input$/;"	f
