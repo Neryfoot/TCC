@@ -16,7 +16,7 @@ def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input
 
 
 def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output
-    command = b"#" + AA + N + data + b"\r"  # command in bytes array
+    command = b"#" + AA + N + b"+" + data + b"\r"  # command in bytes array
     ser.write(command)  # command example #AAN20.000, sets 20mA as output
 
 
