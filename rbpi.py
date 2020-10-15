@@ -2,7 +2,7 @@ import serial
 import time
 import threading
 from multiprocessing import Process, Value
-from opcua import Server
+from opcua import ua,Server
 import DCON
 
 url = "opc.tcp://192.168.15.48:2194"
@@ -13,6 +13,10 @@ server = Server()
 server.set_endpoint(url)
 name = "OPC UA Simulation Server"
 addspace = server.register_namespace(name)
+server.set_security_policy([ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt])
+# load server certificate and private key
+server.load_certificate("certificate.der")
+server.load_private_key("key.pem")
 
 node = server.get_objects_node()
 
