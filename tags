@@ -1,11 +1,9 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
-!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
-!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
-!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
-!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 Application	serialGUI.py	/^class Application(Frame):$/;"	c
 C	controldesing.py	/^C = ctrl.tf([kd, kp, ki], [1, 0])$/;"	v
 Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 0.1, method='zoh')$/;"	v
@@ -21,8 +19,8 @@ __init__	serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Applica
 a	device.py	/^a = device02()     # write a string$/;"	v
 addspace	rbpi.py	/^addspace = server.register_namespace(name)$/;"	v
 app	serialGUI.py	/^app = Application(master=root)$/;"	v
-ax	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
-ax	animation.py	/^fig, ax = plt.subplots()$/;"	v
+ax	animateexample.py	/^        ax=axSlider2,$/;"	v
+ax	animation.py	/^        ax=axSlider2,$/;"	v
 axButton1	animateexample.py	/^axButton1 = plt.axes([0.1, 0.9, 0.1, 0.1])$/;"	v
 axButton2	animateexample.py	/^axButton2 = plt.axes([0.25, 0.9, 0.2, 0.1])$/;"	v
 axSlider1	animateexample.py	/^axSlider1 = plt.axes([0.1, 0.2, 0.8, 0.05])$/;"	v
@@ -35,6 +33,10 @@ bulb	serverexample.py	/^bulb = objects.add_object(2, "Light Bulb")$/;"	v
 checksum	request.py	/^def checksum(cmd: bytes):  # calculates the checksum of command string$/;"	f
 cid	animateexample.py	/^cid = slider2.on_changed(val_update)$/;"	v
 cid	animation.py	/^cid = slider2.on_changed(val_update)$/;"	v
+closedmax	animateexample.py	/^        closedmax=True,$/;"	v
+closedmax	animation.py	/^        closedmax=True,$/;"	v
+color	animateexample.py	/^        color='green'$/;"	v
+color	animation.py	/^        color='green'$/;"	v
 com_process	TankSimulationOPCUA.py	/^com_process = Process(target=communication, args=(ser,))$/;"	v
 com_process	TankSimulationSER.py	/^com_process = Process(target=communication, args=(ser,))$/;"	v
 comm	serialGUI.py	/^    def comm(self):$/;"	m	class:Application
@@ -53,7 +55,6 @@ control1	request.py	/^control1 = write_ch(b"03", b"3", b"+00.000")  $/;"	v
 control1	request.py	/^control1 = write_ch(b"03", b"3", b"+10.000") $/;"	v
 controller	controller.py	/^def controller():$/;"	f
 createWidgets	serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
-ctrl	controldesing.py	/^import control as ctrl$/;"	I
 device02	TankSimulationOPCUA.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	TankSimulationSER.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	device.py	/^def device02():  # simulate device behavior$/;"	f
@@ -83,8 +84,6 @@ f1	TankSimulationOPCUA.py	/^f1 = Value('f', 0) # vazão de entrada$/;"	v
 f2	TankSimulationOPCUA.py	/^f2 = Value('f', 1) # vazão de entrada$/;"	v
 f3	TankSimulationOPCUA.py	/^f3 = Value('f', 2) # vazão de entrada$/;"	v
 f4	TankSimulationOPCUA.py	/^f4 = Value('f', 3) # vazão de entrada$/;"	v
-fig	animateexample.py	/^fig, ax = plt.subplots()$/;"	v
-fig	animation.py	/^fig, ax = plt.subplots()$/;"	v
 fig_loop	AnimatedTank.py	/^def fig_loop(p):$/;"	f
 flow	rbpi.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
 flow1	rbpi.py	/^flow1 = flow.add_variable(addspace, "FLOW1", 0.0)$/;"	v
@@ -107,6 +106,8 @@ isfloat	serialGUI.py	/^def isfloat(x):$/;"	f
 kd	controldesing.py	/^kd = 0$/;"	v
 ki	controldesing.py	/^ki = 10$/;"	v
 kp	controldesing.py	/^kp = .1$/;"	v
+label	animateexample.py	/^        label='Slider2',$/;"	v
+label	animation.py	/^        label='Slider2',$/;"	v
 lvl	controller.py	/^lvl = Value('f', 0)  # fluxo de entrada$/;"	v
 lvl	rbpi.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
 lvl1	rbpi.py	/^lvl1 = lvl.add_variable(addspace, "LVL1", 0.0)$/;"	v
@@ -129,14 +130,7 @@ module2_ch5	request.py	/^module2_ch5 = read_ch(b"05", b"5") $/;"	v
 name	rbpi.py	/^name = "OPC UA Simulation Server"$/;"	v
 new_bstring	byte.py	/^new_bstring = ustring.encode()$/;"	v
 node	rbpi.py	/^node = server.get_objects_node()$/;"	v
-np	controldesing.py	/^import numpy as np$/;"	I
 objects	serverexample.py	/^objects = server.get_objects_node()$/;"	v
-p	animateexample.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
-p	animation.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
-plt	AnimatedTank.py	/^import matplotlib.pyplot as plt$/;"	I
-plt	animateexample.py	/^import matplotlib.pyplot as plt$/;"	I
-plt	animation.py	/^import matplotlib.pyplot as plt$/;"	I
-plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
 port_name	serialGUI.py	/^port_name = input("Enter a port name: ")      # Python > 2.7$/;"	v
 pump	rbpi.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
 pump1	rbpi.py	/^pump1 = pump.add_variable(addspace, "PUMP1", 0.0)$/;"	v
@@ -178,8 +172,6 @@ slider2	animateexample.py	/^slider2 = Slider($/;"	v
 slider2	animation.py	/^slider2 = Slider($/;"	v
 start_server	server.py	/^def start_server(url):$/;"	f
 state	serverexample.py	/^state = bulb.add_variable(2, "State of Light Bulb", False)$/;"	v
-step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
-step	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
 stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0 # flag para parar os processos$/;"	v
 stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0$/;"	v
 stop_flag	TankSimulationOPCUA.py	/^stop_flag = 1$/;"	v
@@ -187,8 +179,6 @@ stop_flag	controller.py	/^stop_flag = 0$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 0$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 1$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
-t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
-t	controldesing.py	/^t, step = ctrl.step_response(T, t)$/;"	v
 temp	serverexample.py	/^temp = tempsens.add_variable('ns=2; s="TS1_Temperature"',  "TS1 Temperature",  12345678)$/;"	v
 temperature	serverexample.py	/^temperature = 20.0$/;"	v
 tempsens	serverexample.py	/^tempsens = objects.add_object('ns=2; s="TS1"', "Temperature Sensor1")$/;"	v
@@ -200,10 +190,18 @@ u4	TankSimulationOPCUA.py	/^u4 = Value('f', 2.5)  # fluxo de entrada$/;"	v
 u5	TankSimulationOPCUA.py	/^u5 = Value('f', 2.0)  # fluxo de entrada$/;"	v
 u6	TankSimulationOPCUA.py	/^u6 = Value('f', 1.0)  # fluxo de entrada$/;"	v
 update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
-url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
+url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.20:2194"$/;"	v
 ustring	byte.py	/^ustring = 'A unicode string'$/;"	v
 val_update	animateexample.py	/^def val_update(val):$/;"	f
 val_update	animation.py	/^def val_update(val):$/;"	f
+valfmt	animateexample.py	/^        valfmt='%1.2f',$/;"	v
+valfmt	animation.py	/^        valfmt='%1.2f',$/;"	v
+valmax	animateexample.py	/^        valmax=100,$/;"	v
+valmax	animation.py	/^        valmax=100,$/;"	v
+valmin	animateexample.py	/^        valmin=0,$/;"	v
+valmin	animation.py	/^        valmin=0,$/;"	v
+valstep	animateexample.py	/^        valstep=1,$/;"	v
+valstep	animation.py	/^        valstep=1,$/;"	v
 write_ch	DCON.py	/^def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output$/;"	f
 write_ch	controller.py	/^def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output$/;"	f
 write_ch	request.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write data to analog output$/;"	f
