@@ -8,7 +8,7 @@ stop_flag = 0 # flag para parar os processos
 
 # Tanque 1
 h1 = Value('f', 0)  # condição inicial de nivel
-u1 = Value('f', 4.0)  # fluxo de entrada
+u1 = Value('f', 16)  # fluxo de entrada
 f1 = Value('f', 0) # vazão de entrada
 # Tanque 2
 h2 = Value('f', 0)  # condição inicial de nivel
@@ -127,7 +127,7 @@ def device03(buffer, ser):  # simulate device behavior
 def dynamic1():
     global yk_1
     global h
-    yk = h1.value*.5/100
+    yk = h1.value
     steps = 0  # condição inicial
     tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
     while stop_flag == 0:
@@ -137,14 +137,15 @@ def dynamic1():
         tn_1 = tn_1 + steps*h  # atualiza o tempo
         if steps > 0:
             while(steps > 0):  # executa atualização da função
-                yk = 0.004*u1.value + 0.96*yk_1
+                yk = 0.4988*u1.value/20 + 0.995*yk_1
                 if yk < 0:  # nível não pode baixar de 0
                     yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
+                if yk > 100:  # nível não passa de 100
+                    yk = 100
                 yk_1 = yk
                 steps -= 1
-        h1.value = yk*100/0.5
+        h1.value = yk
+        print(h1.value)
 
 
 def dynamic2():
