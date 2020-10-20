@@ -6,7 +6,7 @@ from opcua import ua, Client
 import DCON
 
 
-url = "opc.tcp://192.168.15.17:2124"
+url = "opc.tcp://192.168.15.19:2124"
 
 client = Client(url)
 
@@ -16,6 +16,7 @@ yk_1 = 0
 yk_2 = 0
 e_1 = 0
 e_2 = 0
+stop_flag = 0
 
 lvl1 = client.get_node("ns=2;i=2")
 lvl2 = client.get_node("ns=2;i=3")
@@ -36,7 +37,7 @@ pump4 = client.get_node("ns=2;i=17")
 pump5 = client.get_node("ns=2;i=18")
 pump6 = client.get_node("ns=2;i=19")
 
-ref1 = Value('f', 0) # referência
+ref1 = Value('f', 20) # referência
 ref2 = Value('f', 0) # referência
 ref3 = Value('f', 0) # referência
 ref4 = Value('f', 0) # referência
@@ -99,7 +100,7 @@ def controller():
     global yk_2
     global e_1
     global e_2
-    get_level(1)
+    get_levelsim(1)
     e = ref1.value - h1.value
     yk = 11*e -21.59*e_1 + 11*e_2 + 1.007*yk_1 - 0.006738*yk_2
     if yk > 20:
@@ -111,7 +112,11 @@ def controller():
     e_1 = e
     yk_2 = yk_1
     yk_1 = yk
-    pump1.set_value(yk)
+    pump1.set_value(float(yk))
     print(yk)
+    if stop_flag == 0:
+        threading.Timer(1, controller).start()
 
-ref1.value=0.3
+ref1.value=20
+controller()
+stop_flag = 1

@@ -145,7 +145,6 @@ def dynamic1():
                 yk_1 = yk
                 steps -= 1
         h1.value = yk
-        print(h1.value)
 
 
 def dynamic2():
@@ -265,25 +264,25 @@ def dynamic6():
 
 
 dynamic_process1 = Process(target=dynamic1)
-dynamic_process2 = Process(target=dynamic2)
-dynamic_process3 = Process(target=dynamic3)
-dynamic_process4 = Process(target=dynamic4)
-dynamic_process5 = Process(target=dynamic5)
-dynamic_process6 = Process(target=dynamic6)
+# dynamic_process2 = Process(target=dynamic2)
+# dynamic_process3 = Process(target=dynamic3)
+# dynamic_process4 = Process(target=dynamic4)
+# dynamic_process5 = Process(target=dynamic5)
+# dynamic_process6 = Process(target=dynamic6)
 com_process = Process(target=communication, args=(ser,))
 dynamic_process1.start()
-dynamic_process2.start()
-dynamic_process3.start()
-dynamic_process4.start()
-dynamic_process5.start()
-dynamic_process6.start()
+# dynamic_process2.start()
+# dynamic_process3.start()
+# dynamic_process4.start()
+# dynamic_process5.start()
+# dynamic_process6.start()
 com_process.start()
 stop_flag = 1
-stop_flag = 0
-dynamic_process1.terminate()
-dynamic_process2.terminate()
-dynamic_process3.terminate()
-dynamic_process4.terminate()
-dynamic_process5.terminate()
-dynamic_process6.terminate()
-com_process.terminate()
+# stop_flag = 0
+# dynamic_process1.terminate()
+# dynamic_process2.terminate()
+# dynamic_process3.terminate()
+# dynamic_process4.terminate()
+# dynamic_process5.terminate()
+# dynamic_process6.terminate()
+# com_process.terminate()

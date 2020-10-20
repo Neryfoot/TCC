@@ -12,6 +12,8 @@ Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 1, method='zoh')$/;"	v
 Fin	TankSimulationSER.py	/^Fin = Value('f', 4.0)  # fluxo de entrada$/;"	v
 Fin	old/AnimatedTank.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
 Fin_update	old/AnimatedTank.py	/^def Fin_update(val):$/;"	f
+G	controldesing.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
+Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.01, method='zoh')$/;"	v
 Refresher	old/serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
 V_cc	old/serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
 __init__	old/serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
@@ -55,6 +57,7 @@ controller	controller.py	/^def controller():$/;"	f
 controller	old/controllerold.py	/^def controller():$/;"	f
 createWidgets	old/serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
+data	rbpi.py	/^data = bytes('{:06.3f}'.format(pumps[2].get_value()), 'ascii')$/;"	v
 device02	TankSimulationOPCUA.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	TankSimulationSER.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	device.py	/^def device02():  # simulate device behavior$/;"	f
@@ -72,11 +75,6 @@ dynamic6	TankSimulationOPCUA.py	/^def dynamic6():$/;"	f
 dynamic_process	TankSimulationSER.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process	old/AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process1	TankSimulationOPCUA.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
-dynamic_process2	TankSimulationOPCUA.py	/^dynamic_process2 = Process(target=dynamic2)$/;"	v
-dynamic_process3	TankSimulationOPCUA.py	/^dynamic_process3 = Process(target=dynamic3)$/;"	v
-dynamic_process4	TankSimulationOPCUA.py	/^dynamic_process4 = Process(target=dynamic4)$/;"	v
-dynamic_process5	TankSimulationOPCUA.py	/^dynamic_process5 = Process(target=dynamic5)$/;"	v
-dynamic_process6	TankSimulationOPCUA.py	/^dynamic_process6 = Process(target=dynamic6)$/;"	v
 e_1	controller.py	/^e_1 = 0$/;"	v
 e_1	old/controllerold.py	/^e_1 = 0$/;"	v
 e_2	controller.py	/^e_2 = 0$/;"	v
@@ -222,7 +220,7 @@ read_data	TankSimulationOPCUA.py	/^def read_data(ser):  # read bytes until read 
 read_data	TankSimulationSER.py	/^def read_data(ser):  # read bytes until read \\r(carriage return)$/;"	f
 read_data	device.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
 read_data	request.py	/^def read_data():  # read bytes until read \\r(carriage return)$/;"	f
-ref1	controller.py	/^ref1 = Value('f', 0) # referência$/;"	v
+ref1	controller.py	/^ref1 = Value('f', 20) # referência$/;"	v
 ref1	old/controllerold.py	/^ref1 = Value('f', 0) # referência$/;"	v
 ref2	controller.py	/^ref2 = Value('f', 0) # referência$/;"	v
 ref2	old/controllerold.py	/^ref2 = Value('f', 0) # referência$/;"	v
@@ -253,12 +251,16 @@ slider1	old/animateexample.py	/^slider1 = Slider(axSlider1, 'Slider1', valmin=0,
 slider2	old/animateexample.py	/^slider2 = Slider($/;"	v
 slider2	old/animation.py	/^slider2 = Slider($/;"	v
 start_server	server.py	/^def start_server(url):$/;"	f
+step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0 # flag para parar os processos$/;"	v
-stop_flag	TankSimulationOPCUA.py	/^stop_flag = 0$/;"	v
 stop_flag	TankSimulationOPCUA.py	/^stop_flag = 1$/;"	v
+stop_flag	controller.py	/^stop_flag = 0$/;"	v
+stop_flag	controller.py	/^stop_flag = 1$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 0$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 0$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 1$/;"	v
+t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
+t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 u1	TankSimulationOPCUA.py	/^u1 = Value('f', 16)  # fluxo de entrada$/;"	v
 u1	controller.py	/^u1 = Value('f', 0) # sinal de controle do tanque 1$/;"	v
 u2	TankSimulationOPCUA.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
@@ -273,7 +275,7 @@ u6	TankSimulationOPCUA.py	/^u6 = Value('f', 1.0)  # fluxo de entrada$/;"	v
 u6	controller.py	/^u6 = Value('f', 0) # sinal de controle do tanque 6$/;"	v
 update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 update_variable	ufrgs.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
-url	controller.py	/^url = "opc.tcp:\/\/192.168.15.17:2124"$/;"	v
+url	controller.py	/^url = "opc.tcp:\/\/192.168.15.19:2124"$/;"	v
 url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.17:2124"$/;"	v
 url	ufrgs.py	/^url = "opc.tcp:\/\/143.54.96.127:2124"$/;"	v
 ustring	old/byte.py	/^ustring = 'A unicode string'$/;"	v

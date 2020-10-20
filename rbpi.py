@@ -71,7 +71,7 @@ def communication(ser):
     for i in range(6):
         update_variable(lvls[i], b"05", bytes(str(i), 'ascii'), ser)
     for i in range(6):
-        data = bytes(str(pumps[i].get_value()), 'ascii')
+        data = bytes('{:06.3f}'.format(pumps[i].get_value()), 'ascii')
         DCON.write_ch(b"03", bytes(str(i), 'ascii'), data, ser)
     if stop_flag == 0:
         threading.Timer(1, communication, args=[ser,]).start()
@@ -86,3 +86,4 @@ server.start()
 # pump3.set_value(10.000)
 # pump3.set_value(00.000)
 # pump3.get_value()
+data = bytes('{:06.3f}'.format(pumps[2].get_value()), 'ascii')
