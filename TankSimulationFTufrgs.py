@@ -138,7 +138,7 @@ def dynamic1():
         tn_1 = tn_1 + steps*h  # atualiza o tempo
         if steps > 0:
             while(steps > 0):  # executa atualização da função
-                yk = 0.4988*u1.value/20 + 0.995*yk_1
+                yk = 0.0003333*u1.value + 0.997*yk_1
                 if yk < 0:  # nível não pode baixar de 0
                     yk = 0
                 if yk > 100:  # nível não passa de 100

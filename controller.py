@@ -1,6 +1,9 @@
 import serial
 import time
 import threading
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
 from multiprocessing import Process, Value
 from opcua import ua, Client
 import DCON
@@ -12,11 +15,57 @@ client = Client(url)
 
 client.connect()
 # Variables
-yk_1 = 0
-yk_2 = 0
-e_1 = 0
-e_2 = 0
+yk_11 = 0
+yk_12 = 0
+e_11 = 0
+e_12 = 0
 stop_flag = 0
+t_01 = 0
+PV1 = []
+MV1 = []
+t1 = []
+tread1 = []
+twrite1 = []
+
+# Variables
+yk_21 = 0
+yk_22 = 0
+e_21 = 0
+e_22 = 0
+stop_flag = 0
+t_02 = 1
+PV2 = []
+MV2 = []
+t2 = []
+tread2 = []
+twrite2 = []
+
+# Variables
+yk_31 = 0
+yk_32 = 0
+e_31 = 0
+e_32 = 0
+stop_flag = 0
+t_03 = 1
+PV3 = []
+MV3 = []
+t3 = []
+tread3 = []
+twrite3 = []
+
+# Variables
+yk_41 = 0
+yk_42 = 0
+e_41 = 0
+e_42 = 0
+stop_flag = 0
+t_04 = 1
+PV4 = []
+MV4 = []
+t4 = []
+tread4 = []
+twrite4 = []
+
 
 lvl1 = client.get_node("ns=2;i=2")
 lvl2 = client.get_node("ns=2;i=3")
@@ -95,28 +144,104 @@ def get_levelsim(lvl):
         h6.value = lvl6.get_value() # leitura em mA
 
 
-def controller():
-    global yk_1
-    global yk_2
-    global e_1
-    global e_2
-    get_levelsim(1)
+# def controller():
+#     global yk_1
+#     global yk_2
+#     global e_1
+#     global e_2
+#     h1 = lvl1.get_value() # leitura em mA 
+#     h1.value = 0.0078*((h1)**3) - 0.2790*((h1)**2) + 4.3687*((h1)**1) -12.724 # converte em cm
+#     e = ref1.value - h1.value
+#     yk = 4*e -6.8*e_1 + 3*e_2 + 1*yk_1 
+#     if yk > 20:
+#         yk = 20
+#     if yk < 0:
+#         yk = 0
+#     # atualiza as variáveis
+#     e_2 = e_1
+#     e_1 = e
+#     yk_2 = yk_1
+#     yk_1 = yk
+#     pump1.set_value(float(yk))
+#     print(yk)
+#     if stop_flag == 0:
+#         threading.Timer(1, controller).start()
+
+
+def controller1():
+    global yk_11
+    global yk_12
+    global e_11
+    global e_12
+    global t_01, t1
+    global PV1, MV1
+    t_start = time.time()
+    h = lvl1.get_value() # leitura em mA 
+    t_end = time.time()
+    tread = t_end - t_start
+    h1.value = h
+    # h1.value = 0.0078*((h)**3) - 0.2790*((h)**2) + 4.3687*((h)**1) -12.724 # converte em cm
     e = ref1.value - h1.value
-    yk = 11*e -21.59*e_1 + 11*e_2 + 1.007*yk_1 - 0.006738*yk_2
+    yk = 4*e - 6.8*e_11 + 3*e_12 + 1*yk_11
     if yk > 20:
         yk = 20
     if yk < 0:
         yk = 0
     # atualiza as variáveis
-    e_2 = e_1
-    e_1 = e
-    yk_2 = yk_1
-    yk_1 = yk
+    e_12 = e_11
+    e_11 = e
+    yk_12 = yk_11
+    yk_11 = yk
+    t_start = time.time()
     pump1.set_value(float(yk))
+    t_end = time.time()
+    twrite = t_end - t_start
     print(yk)
+    print(h)
+    print(h1.value)
+    PV1.append(h1.value)
+    MV1.append(yk)
+    t = t_start - t_01
+    t1.append(t)
+    tread1.append(tread)
+    twrite1.append(twrite)
     if stop_flag == 0:
-        threading.Timer(1, controller).start()
+        threading.Timer(1, controller1).start()
 
-ref1.value=20
-controller()
+
+ref1.value=3
+t_01 = time.time()
+controller1()
 stop_flag = 1
+stop_flag = 0
+
+
+client.disconnect()
+
+results1 = np.vstack((t1, PV1, MV1, tread1))
+results1 = results1.transpose()
+np.savetxt('results1.csv', results1, delimiter=',')
+np.savetxt('t1.txt', t1, delimiter=',')
+np.savetxt('PV1.txt', PV1, delimiter=',')
+np.savetxt('MV1.txt', MV1, delimiter=',')
+np.savetxt('tread1.txt', tread1, delimiter=',')
+
+fig, ax = plt.subplots()
+ax.plot(t1, MV1)
+
+ax.set(xlabel='tempo (s)', ylabel='sinal de controle em mA',
+       title='MV')
+ax.grid()
+
+fig.savefig("MV.png")
+plt.show()
+
+fig, ax = plt.subplots()
+ax.plot(t1, PV1)
+
+ax.set(xlabel='tempo (s)', ylabel='nível do tanque %',
+       title='PV')
+ax.grid()
+
+fig.savefig("PV.png")
+plt.show()

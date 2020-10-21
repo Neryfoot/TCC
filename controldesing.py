@@ -8,15 +8,27 @@ kp = 5.5
 ki= 0.075
 alpha = 0.1
 
-C = ctrl.tf([2*alpha*kp*kd, kp*ki*kd*alpha, kp*ki], [kd*alpha, 1, 0])
-Cd = ctrl.sample_system(C, 1, method='zoh')
+kd = 1
+kp = 2
+ki= 0.1
+alpha = 0.1
 
-G = ctrl.tf(100/2, [1, 1/2])
-Gd = ctrl.sample_system(G, 0.01, method='zoh')
+
+C = ctrl.tf([2*alpha*kp*kd, (kp*ki*kd*alpha+1), kp*ki], [kd*alpha, 1, 0])
+C
+Cd = ctrl.sample_system(C, 1, method='zoh')
+Cd
+G = ctrl.tf(10, [300, 1])
+Gd = ctrl.sample_system(G, 0.1, method='zoh')
 Gd
+G = ctrl.tf(100/2, [1, 1/2])
+Gd = ctrl.sample_system(G, 0.1, method='zoh')
+Gd
+
 # C = ctrl.tf([alpha*kp*ki*kd, (2*ki+1)*kp*kd*alpha, kp], [ki*kd*alpha, ki, 0])
 t = np.arange(0, 50, 0.01)
 t, step = ctrl.step_response(G, t)
+
 
 # T = ctrl.feedback(C*G*10)
 # t, step = ctrl.step_response(T, t)
