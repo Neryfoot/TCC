@@ -5,7 +5,7 @@ from multiprocessing import Process, Value
 from opcua import ua, Server
 import DCON
 
-url = "opc.tcp://192.168.15.17:2124"
+url = "opc.tcp://192.168.15.19:2124"
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
 stop_flag = 0
 
@@ -78,12 +78,12 @@ def communication(ser):
 
 
 server.start()
-# communication(ser)
-# stop_flag = 1
-# stop_flag = 0
-# server.stop()
+communication(ser)
+stop_flag = 1
+stop_flag = 0
+server.stop()
 
-# pump3.set_value(10.000)
-# pump3.set_value(00.000)
+pump1.set_value(18.0)
+pump1.set_value(00.000)
 # pump3.get_value()
-data = bytes('{:06.3f}'.format(pumps[2].get_value()), 'ascii')
+        data = bytes('{:06.3f}'.format(pumps[0].get_value()), 'ascii')
