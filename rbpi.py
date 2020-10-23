@@ -6,8 +6,8 @@ from opcua import ua, Server
 import DCON
 import re
 
-url = "opc.tcp://192.168.15.19:2124"
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
+url = "opc.tcp://192.168.15.48:2194"
+ser = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=1.0, write_timeout=1.0)  # open serial port
 stop_flag = 0
 
 server = Server()
