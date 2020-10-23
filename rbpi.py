@@ -4,6 +4,7 @@ import threading
 from multiprocessing import Process, Value
 from opcua import ua, Server
 import DCON
+import re
 
 url = "opc.tcp://192.168.15.19:2124"
 ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
@@ -55,12 +56,16 @@ pumps = [pump1, pump2, pump3, pump4, pump5, pump6]
 
 def update_variable(variable, AA: bytes, N: bytes, ser):
     data = DCON.read_ch(AA, N, ser)
-    data = data[1:]
-    data = data[:-1]
-    data = float(data)
+    data = re.sub("[^0-9^.]", "", data)
+    if len(data)>0:
+        try:
+            data = float(data)
+        except:
+            print("Skipped variable {}".format(variable))
     variable.set_value(data)
     print(variable)
     print(variable.get_value())
+    
 
 
 def communication(ser):
@@ -86,4 +91,3 @@ server.stop()
 pump1.set_value(18.0)
 pump1.set_value(00.000)
 # pump3.get_value()
-        data = bytes('{:06.3f}'.format(pumps[0].get_value()), 'ascii')

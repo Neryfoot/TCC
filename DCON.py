@@ -1,11 +1,15 @@
 def read_data(ser):  # read bytes until read \r(carriage return)
     buffer = ""
     while True:
-        one_byte = ser.read(1)
+        try:
+            one_byte = ser.read(1)
+        except:
+            print("Serial read failed or took too long")
+            return buffer
         if one_byte == b"\r":    # method should returns bytes
             return buffer
         else:
-            buffer += one_byte.decode()
+            buffer += one_byte.decode(errors='ignore')
 
 
 def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input
@@ -18,6 +22,8 @@ def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input
 def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output
     command = b"#" + AA + N + b"+" + data + b"\r"  # command in bytes array
     ser.write(command)  # command example #AAN20.000, sets 20mA as output
+    confirm = read_data(ser)
+    return confirm
 
 
 # def checksum(cmd: bytes):  # calculates the checksum of command string

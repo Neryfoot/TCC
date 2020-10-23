@@ -15,10 +15,12 @@ Fin_update	old/AnimatedTank.py	/^def Fin_update(val):$/;"	f
 G	controldesing.py	/^G = ctrl.tf(10, [300, 1])$/;"	v
 G	controldesing.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='zoh')$/;"	v
+MV	TankSimulationOPCUA.py	/^MV = []$/;"	v
 MV1	controller.py	/^MV1 = []$/;"	v
 MV2	controller.py	/^MV2 = []$/;"	v
 MV3	controller.py	/^MV3 = []$/;"	v
 MV4	controller.py	/^MV4 = []$/;"	v
+PV	TankSimulationOPCUA.py	/^PV = []$/;"	v
 PV1	controller.py	/^PV1 = []$/;"	v
 PV2	controller.py	/^PV2 = []$/;"	v
 PV3	controller.py	/^PV3 = []$/;"	v
@@ -27,6 +29,7 @@ Refresher	old/serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
 V_cc	old/serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
 __init__	old/serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
 a	device.py	/^a = device02()     # write a string$/;"	v
+a	sub.py	/^a = ">>>12344++34456.++23))"$/;"	v
 addspace	rbpi.py	/^addspace = server.register_namespace(name)$/;"	v
 addspace	ufrgs.py	/^addspace = server.register_namespace(name)$/;"	v
 alpha	controldesing.py	/^alpha = 0.1$/;"	v
@@ -69,7 +72,7 @@ controller	old/controllerold.py	/^def controller():$/;"	f
 controller1	controller.py	/^def controller1():$/;"	f
 createWidgets	old/serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
-data	rbpi.py	/^data = bytes('{:06.3f}'.format(pumps[2].get_value()), 'ascii')$/;"	v
+data	sub.py	/^data = re.sub("[^0-9^.]", "", a)$/;"	v
 device02	TankSimulationFTufrgs.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	TankSimulationOPCUA.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	TankSimulationSER.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
@@ -312,6 +315,7 @@ stop_flag	TankSimulationOPCUA.py	/^stop_flag = 1$/;"	v
 stop_flag	controller.py	/^stop_flag = 0$/;"	v
 stop_flag	controller.py	/^stop_flag = 1$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 0$/;"	v
+stop_flag	rbpi.py	/^stop_flag = 1$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 0$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 1$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
@@ -320,11 +324,14 @@ t1	controller.py	/^t1 = []$/;"	v
 t2	controller.py	/^t2 = []$/;"	v
 t3	controller.py	/^t3 = []$/;"	v
 t4	controller.py	/^t4 = []$/;"	v
+t_0	TankSimulationOPCUA.py	/^t_0= 0$/;"	v
 t_01	controller.py	/^t_01 = 0$/;"	v
 t_01	controller.py	/^t_01 = time.time()$/;"	v
 t_02	controller.py	/^t_02 = 1$/;"	v
 t_03	controller.py	/^t_03 = 1$/;"	v
 t_04	controller.py	/^t_04 = 1$/;"	v
+t_read	TankSimulationOPCUA.py	/^t_read= []$/;"	v
+time	TankSimulationOPCUA.py	/^time= []$/;"	v
 tread1	controller.py	/^tread1 = []$/;"	v
 tread2	controller.py	/^tread2 = []$/;"	v
 tread3	controller.py	/^tread3 = []$/;"	v
@@ -354,7 +361,7 @@ u6	controller.py	/^u6 = Value('f', 0) # sinal de controle do tanque 6$/;"	v
 update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 update_variable	ufrgs.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 url	controller.py	/^url = "opc.tcp:\/\/192.168.15.19:2124"$/;"	v
-url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.17:2124"$/;"	v
+url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.19:2124"$/;"	v
 url	ufrgs.py	/^url = "opc.tcp:\/\/143.54.96.127:2124"$/;"	v
 ustring	old/byte.py	/^ustring = 'A unicode string'$/;"	v
 val_update	old/animateexample.py	/^def val_update(val):$/;"	f
