@@ -9,6 +9,7 @@ from opcua import ua, Client
 
 
 url = "opc.tcp://143.54.96.127:2194"
+url = "opc.tcp://192.168.15.48:2194"
 
 client = Client(url)
 
@@ -22,6 +23,7 @@ stop_flag = 0
 t_01 = 0
 PV1 = []
 MV1 = []
+REF1 = []
 t1 = []
 tread1 = []
 twrite1 = []
@@ -35,6 +37,7 @@ stop_flag = 0
 t_02 = 1
 PV2 = []
 MV2 = []
+REF2 = []
 t2 = []
 tread2 = []
 twrite2 = []
@@ -48,6 +51,7 @@ stop_flag = 0
 t_03 = 1
 PV3 = []
 MV3 = []
+REF3 = []
 t3 = []
 tread3 = []
 twrite3 = []
@@ -200,13 +204,15 @@ def controller1():
     print(h1.value)
     PV1.append(h1.value)
     MV1.append(yk)
+    REF1.append(ref1.value)
     t = t_start - t_01
     t1.append(t)
     tread1.append(tread)
     twrite1.append(twrite)
     if stop_flag == 0:
         threading.Timer(1, controller1).start()
-        
+
+
 def controller2():
     global yk_21
     global yk_22
@@ -251,10 +257,11 @@ def controller2():
 
 
 ref1.value=3
+ref1.value=80
 ref2.value=10
 t_01 = time.time()
 t_02 = time.time()
-controller2()
+controller1()
 stop_flag = 1
 stop_flag = 0
 
@@ -268,6 +275,7 @@ np.savetxt('t1.txt', t1, delimiter=',')
 np.savetxt('PV1.txt', PV1, delimiter=',')
 np.savetxt('MV1.txt', MV1, delimiter=',')
 np.savetxt('tread1.txt', tread1, delimiter=',')
+np.savetxt('twrite1.txt', twrite1, delimiter=',')
 
 fig, ax = plt.subplots()
 ax.plot(t1, MV1)

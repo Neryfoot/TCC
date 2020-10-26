@@ -15,7 +15,6 @@ Fin_update	old/AnimatedTank.py	/^def Fin_update(val):$/;"	f
 G	controldesing.py	/^G = ctrl.tf(10, [300, 1])$/;"	v
 G	controldesing.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='zoh')$/;"	v
-MV	TankSimulationOPCUA.py	/^MV = []$/;"	v
 MV1	controller.py	/^MV1 = []$/;"	v
 MV1	controllerUFRGS.py	/^MV1 = []$/;"	v
 MV2	controller.py	/^MV2 = []$/;"	v
@@ -24,7 +23,6 @@ MV3	controller.py	/^MV3 = []$/;"	v
 MV3	controllerUFRGS.py	/^MV3 = []$/;"	v
 MV4	controller.py	/^MV4 = []$/;"	v
 MV4	controllerUFRGS.py	/^MV4 = []$/;"	v
-PV	TankSimulationOPCUA.py	/^PV = []$/;"	v
 PV1	controller.py	/^PV1 = []$/;"	v
 PV1	controllerUFRGS.py	/^PV1 = []$/;"	v
 PV2	controller.py	/^PV2 = []$/;"	v
@@ -33,6 +31,9 @@ PV3	controller.py	/^PV3 = []$/;"	v
 PV3	controllerUFRGS.py	/^PV3 = []$/;"	v
 PV4	controller.py	/^PV4 = []$/;"	v
 PV4	controllerUFRGS.py	/^PV4 = []$/;"	v
+REF1	controllerUFRGS.py	/^REF1 = []$/;"	v
+REF2	controllerUFRGS.py	/^REF2 = []$/;"	v
+REF3	controllerUFRGS.py	/^REF3 = []$/;"	v
 Refresher	old/serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
 V_cc	old/serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
 __init__	old/serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
@@ -385,7 +386,6 @@ t3	controller.py	/^t3 = []$/;"	v
 t3	controllerUFRGS.py	/^t3 = []$/;"	v
 t4	controller.py	/^t4 = []$/;"	v
 t4	controllerUFRGS.py	/^t4 = []$/;"	v
-t_0	TankSimulationOPCUA.py	/^t_0= 0$/;"	v
 t_01	controller.py	/^t_01 = 0$/;"	v
 t_01	controller.py	/^t_01 = time.time()$/;"	v
 t_01	controllerUFRGS.py	/^t_01 = 0$/;"	v
@@ -397,8 +397,6 @@ t_03	controller.py	/^t_03 = 1$/;"	v
 t_03	controllerUFRGS.py	/^t_03 = 1$/;"	v
 t_04	controller.py	/^t_04 = 1$/;"	v
 t_04	controllerUFRGS.py	/^t_04 = 1$/;"	v
-t_read	TankSimulationOPCUA.py	/^t_read= []$/;"	v
-time	TankSimulationOPCUA.py	/^time= []$/;"	v
 tread1	controller.py	/^tread1 = []$/;"	v
 tread1	controllerUFRGS.py	/^tread1 = []$/;"	v
 tread2	controller.py	/^tread2 = []$/;"	v
@@ -443,6 +441,7 @@ update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser
 update_variable	ufrgs.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 url	controller.py	/^url = "opc.tcp:\/\/192.168.15.19:2124"$/;"	v
 url	controllerUFRGS.py	/^url = "opc.tcp:\/\/143.54.96.127:2194"$/;"	v
+url	controllerUFRGS.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
 url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
 url	ufrgs.py	/^url = "opc.tcp:\/\/143.54.96.127:2124"$/;"	v
 ustring	old/byte.py	/^ustring = 'A unicode string'$/;"	v
