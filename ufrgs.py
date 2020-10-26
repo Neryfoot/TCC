@@ -2,11 +2,12 @@ import serial
 import time
 import threading
 from multiprocessing import Process, Value
-from opcua import ua,Server
+from opcua import ua, Server
 import DCON
+import re
 
-url = "opc.tcp://143.54.96.127:2124"
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # open serial port
+url = "opc.tcp://143.54.96.127:2194"
+ser = serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=1.0, write_timeout=1.0)  # open serial port
 stop_flag = 0
 
 server = Server()
@@ -55,12 +56,16 @@ pumps = [pump1, pump2, pump3, pump4, pump5, pump6]
 
 def update_variable(variable, AA: bytes, N: bytes, ser):
     data = DCON.read_ch(AA, N, ser)
-    data = data[1:]
-    data = data[:-1]
-    data = float(data)
+    data = re.sub("[^0-9^.]", "", data)
+    if len(data)>0:
+        try:
+            data = float(data)
+        except:
+            print("Skipped variable {}".format(variable))
     variable.set_value(data)
     print(variable)
     print(variable.get_value())
+    
 
 
 def communication(ser):
@@ -71,7 +76,7 @@ def communication(ser):
     for i in range(6):
         update_variable(lvls[i], b"05", bytes(str(i), 'ascii'), ser)
     for i in range(6):
-        data = bytes(str(pumps[i].get_value()), 'ascii')
+        data = bytes('{:06.3f}'.format(pumps[i].get_value()), 'ascii')
         DCON.write_ch(b"03", bytes(str(i), 'ascii'), data, ser)
     if stop_flag == 0:
         threading.Timer(1, communication, args=[ser,]).start()
@@ -83,6 +88,6 @@ stop_flag = 1
 stop_flag = 0
 server.stop()
 
-pump3.set_value(10.000)
-pump3.set_value(00.000)
-pump3.get_value()
+pump1.set_value(18.0)
+pump1.set_value(00.000)
+# pump3.get_value()
