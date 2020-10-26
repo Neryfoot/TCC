@@ -6,11 +6,6 @@ import numpy as np
 h = 0.1  # passo da solução numérica
 yk_1 = 0  # condição inicial
 stop_flag = 0 # flag para parar os processos
-t_0= 0
-t_read= []
-time= []
-PV = []
-MV = []
 
 # Tanque 1
 h1 = Value('f', 0)  # condição inicial de nivel
