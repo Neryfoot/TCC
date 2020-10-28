@@ -7,14 +7,19 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
 Application	old/serialGUI.py	/^class Application(Frame):$/;"	c
+BIGGER_SIZE	plotdata.py	/^BIGGER_SIZE = 20$/;"	v
 C	controldesing.py	/^C = ctrl.tf([2*alpha*kp*kd, (kp*ki*kd*alpha+1), kp*ki], [kd*alpha, 1, 0])$/;"	v
+C	controldesing.py	/^C = ctrl.tf([kd*kp+alpha*kp, (ki*alpha*kp + kp), kp*ki], [alpha, 1, 0])$/;"	v
 Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 1, method='zoh')$/;"	v
+Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 1\/15, method='zoh')$/;"	v
 Fin	TankSimulationSER.py	/^Fin = Value('f', 4.0)  # fluxo de entrada$/;"	v
 Fin	old/AnimatedTank.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
 Fin_update	old/AnimatedTank.py	/^def Fin_update(val):$/;"	f
-G	controldesing.py	/^G = ctrl.tf(10, [300, 1])$/;"	v
+G	controldesing.py	/^G = ctrl.tf(0.638569, [300, 1])$/;"	v
 G	controldesing.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
+Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='matched')$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='zoh')$/;"	v
+MEDIUM_SIZE	plotdata.py	/^MEDIUM_SIZE = 18$/;"	v
 MV1	controller.py	/^MV1 = []$/;"	v
 MV1	controllerUFRGS.py	/^MV1 = []$/;"	v
 MV2	controller.py	/^MV2 = []$/;"	v
@@ -31,10 +36,14 @@ PV3	controller.py	/^PV3 = []$/;"	v
 PV3	controllerUFRGS.py	/^PV3 = []$/;"	v
 PV4	controller.py	/^PV4 = []$/;"	v
 PV4	controllerUFRGS.py	/^PV4 = []$/;"	v
+REF1	controller.py	/^REF1 = []$/;"	v
 REF1	controllerUFRGS.py	/^REF1 = []$/;"	v
+REF2	controller.py	/^REF2 = []$/;"	v
 REF2	controllerUFRGS.py	/^REF2 = []$/;"	v
+REF3	controller.py	/^REF3 = []$/;"	v
 REF3	controllerUFRGS.py	/^REF3 = []$/;"	v
 Refresher	old/serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
+SMALL_SIZE	plotdata.py	/^SMALL_SIZE = 12$/;"	v
 V_cc	old/serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
 __init__	old/serialGUI.py	/^    def __init__(self, master=None):$/;"	m	class:Application
 a	device.py	/^a = device02()     # write a string$/;"	v
@@ -47,6 +56,7 @@ ax	controller.py	/^fig, ax = plt.subplots()$/;"	v
 ax	controllerUFRGS.py	/^fig, ax = plt.subplots()$/;"	v
 ax	old/animateexample.py	/^fig, ax = plt.subplots()$/;"	v
 ax	old/animation.py	/^fig, ax = plt.subplots()$/;"	v
+ax	plotdata.py	/^fig, ax = plt.subplots()$/;"	v
 axButton1	old/animateexample.py	/^axButton1 = plt.axes([0.1, 0.9, 0.1, 0.1])$/;"	v
 axButton2	old/animateexample.py	/^axButton2 = plt.axes([0.25, 0.9, 0.2, 0.1])$/;"	v
 axSlider1	old/animateexample.py	/^axSlider1 = plt.axes([0.1, 0.2, 0.8, 0.05])$/;"	v
@@ -82,9 +92,11 @@ control1	request.py	/^control1 = write_ch(b"03", b"3", b"+10.000") $/;"	v
 controller	old/controllerold.py	/^def controller():$/;"	f
 controller1	controller.py	/^def controller1():$/;"	f
 controller1	controllerUFRGS.py	/^def controller1():$/;"	f
+controller2	controller.py	/^def controller2():$/;"	f
 controller2	controllerUFRGS.py	/^def controller2():$/;"	f
 createWidgets	old/serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
+da	ensaios/matlab/modulos_opc.m	/^   da = opcda(machine, server);$/;"	v
 data	sub.py	/^data = re.sub("[^0-9^.]", "", a)$/;"	v
 device02	TankSimulationFTufrgs.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
 device02	TankSimulationOPCUA.py	/^def device02(buffer, ser):  # simulate device behavior$/;"	f
@@ -100,15 +112,10 @@ dynamic	old/AnimatedTank.py	/^def dynamic():$/;"	f
 dynamic1	TankSimulationFTufrgs.py	/^def dynamic1():$/;"	f
 dynamic1	TankSimulationOPCUA.py	/^def dynamic1():$/;"	f
 dynamic2	TankSimulationFTufrgs.py	/^def dynamic2():$/;"	f
-dynamic2	TankSimulationOPCUA.py	/^def dynamic2():$/;"	f
 dynamic3	TankSimulationFTufrgs.py	/^def dynamic3():$/;"	f
-dynamic3	TankSimulationOPCUA.py	/^def dynamic3():$/;"	f
 dynamic4	TankSimulationFTufrgs.py	/^def dynamic4():$/;"	f
-dynamic4	TankSimulationOPCUA.py	/^def dynamic4():$/;"	f
 dynamic5	TankSimulationFTufrgs.py	/^def dynamic5():$/;"	f
-dynamic5	TankSimulationOPCUA.py	/^def dynamic5():$/;"	f
 dynamic6	TankSimulationFTufrgs.py	/^def dynamic6():$/;"	f
-dynamic6	TankSimulationOPCUA.py	/^def dynamic6():$/;"	f
 dynamic_process	TankSimulationSER.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process	old/AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process1	TankSimulationFTufrgs.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
@@ -143,6 +150,7 @@ fig	controller.py	/^fig, ax = plt.subplots()$/;"	v
 fig	controllerUFRGS.py	/^fig, ax = plt.subplots()$/;"	v
 fig	old/animateexample.py	/^fig, ax = plt.subplots()$/;"	v
 fig	old/animation.py	/^fig, ax = plt.subplots()$/;"	v
+fig	plotdata.py	/^fig, ax = plt.subplots()$/;"	v
 fig_loop	old/AnimatedTank.py	/^def fig_loop(p):$/;"	f
 flow	rbpi.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
 flow	ufrgs.py	/^flow = node.add_object(addspace, "Flow Sensors")$/;"	v
@@ -173,6 +181,7 @@ get_level	controller.py	/^def get_level(lvl):$/;"	f
 get_level	controllerUFRGS.py	/^def get_level(lvl):$/;"	f
 get_levelsim	controller.py	/^def get_levelsim(lvl):$/;"	f
 get_levelsim	controllerUFRGS.py	/^def get_levelsim(lvl):$/;"	f
+grp	ensaios/matlab/modulos_opc.m	/^   grp = addgroup(da);$/;"	v
 h	TankSimulationFTufrgs.py	/^h = 0.1  # passo da solução numérica$/;"	v
 h	TankSimulationOPCUA.py	/^h = 0.1  # passo da solução numérica$/;"	v
 h	TankSimulationSER.py	/^h = 0.1  # passo da solução numérica$/;"	v
@@ -204,11 +213,13 @@ h6	controllerUFRGS.py	/^h6 = Value ('f',0) # nível do tanque 6$/;"	v
 interface	old/AnimatedTank.py	/^def interface():$/;"	f
 interface_process	old/AnimatedTank.py	/^interface_process = Process(target=interface)$/;"	v
 isfloat	old/serialGUI.py	/^def isfloat(x):$/;"	f
+itm	ensaios/matlab/modulos_opc.m	/^   itm = additem(grp, tagin);$/;"	v
+itm	ensaios/matlab/modulos_opc.m	/^   itm = additem(grp, tagout);$/;"	v
 kd	controldesing.py	/^kd = 1$/;"	v
 kd	controldesing.py	/^kd = 2$/;"	v
 ki	controldesing.py	/^ki= 0.075$/;"	v
 ki	controldesing.py	/^ki= 0.1$/;"	v
-kp	controldesing.py	/^kp = 2$/;"	v
+kp	controldesing.py	/^kp = 2.5$/;"	v
 kp	controldesing.py	/^kp = 5.5$/;"	v
 lvl	rbpi.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
 lvl	ufrgs.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
@@ -255,6 +266,10 @@ module2_ch2	request.py	/^module2_ch2 = read_ch(b"05", b"2") $/;"	v
 module2_ch3	request.py	/^module2_ch3 = read_ch(b"05", b"3") $/;"	v
 module2_ch4	request.py	/^module2_ch4 = read_ch(b"05", b"4") $/;"	v
 module2_ch5	request.py	/^module2_ch5 = read_ch(b"05", b"5") $/;"	v
+modulos_opc	ensaios/matlab/modulos_opc.m	/^function  [sys,x0,str,ts]  = modulos_opc(t,x,u,flag,dt,machine,server,tagin,tagout)$/;"	f
+mv	plotdata.py	/^mv=0$/;"	v
+mv	plotdata.py	/^mv=np.loadtxt('.\/simulação\/ensaio3\/MV1.txt')$/;"	v
+mv	plotdata.py	/^mv=u1[:,1]$/;"	v
 name	rbpi.py	/^name = "OPC UA DEQUI"$/;"	v
 name	ufrgs.py	/^name = "OPC UA DEQUI"$/;"	v
 new_bstring	old/byte.py	/^new_bstring = ustring.encode()$/;"	v
@@ -265,14 +280,17 @@ np	TankSimulationOPCUA.py	/^import numpy as np$/;"	I
 np	controldesing.py	/^import numpy as np$/;"	I
 np	controller.py	/^import numpy as np$/;"	I
 np	controllerUFRGS.py	/^import numpy as np$/;"	I
+np	plotdata.py	/^import numpy as np$/;"	I
 p	old/animateexample.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
 p	old/animation.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
+pd	plotdata.py	/^import pandas as pd$/;"	I
 plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controller.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controllerUFRGS.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	old/AnimatedTank.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	old/animateexample.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	old/animation.py	/^import matplotlib.pyplot as plt$/;"	I
+plt	plotdata.py	/^import matplotlib.pyplot as plt$/;"	I
 port_name	old/serialGUI.py	/^port_name = input("Enter a port name: ")      # Python > 2.7$/;"	v
 pump	rbpi.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
 pump	ufrgs.py	/^pump = node.add_object(addspace, "Pump Actuators")$/;"	v
@@ -309,6 +327,8 @@ pump6	ufrgs.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.0)$/;"	v
 pumps	old/controllerold.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
 pumps	rbpi.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
 pumps	ufrgs.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
+pv	plotdata.py	/^pv=np.loadtxt('.\/simulação\/ensaio3\/PV1.txt')$/;"	v
+pv	plotdata.py	/^pv=y1[:,1]$/;"	v
 read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	device.py	/^def read_ch(AA: hex, N: hex):  # Readsthe analog input$/;"	f
 read_ch	request.py	/^def read_ch(AA: bytes, N: bytes):  # Read sthe analog input$/;"	f
@@ -353,7 +373,7 @@ ser	old/example1.py	/^ser = serial.Serial('\/dev\/ttyUSB0')  # open serial port$
 ser	old/serialGUI.py	/^ser = serial.Serial($/;"	v
 ser	rbpi.py	/^ser = serial.Serial('\/dev\/ttyUSB0', baudrate=9600, timeout=1.0, write_timeout=1.0)  # open ser/;"	v
 ser	request.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
-ser	ufrgs.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
+ser	ufrgs.py	/^ser = serial.Serial('\/dev\/ttyUSB0', baudrate=9600, timeout=1.0, write_timeout=1.0)  # open ser/;"	v
 server	rbpi.py	/^server = Server()$/;"	v
 server	ufrgs.py	/^server = Server()$/;"	v
 setValue	old/animateexample.py	/^def setValue(val):$/;"	f
@@ -376,8 +396,15 @@ stop_flag	rbpi.py	/^stop_flag = 0$/;"	v
 stop_flag	rbpi.py	/^stop_flag = 1$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 0$/;"	v
 stop_flag	ufrgs.py	/^stop_flag = 1$/;"	v
+str	ensaios/matlab/modulos_opc.m	/^   str   = [];$/;"	v
+sys	ensaios/matlab/modulos_opc.m	/^   sys    = [];$/;"	v
+sys	ensaios/matlab/modulos_opc.m	/^   sys = [];$/;"	v
+sys	ensaios/matlab/modulos_opc.m	/^   sys = clock;$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
 t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
+t	plotdata.py	/^t= np.arange(len(mv))$/;"	v
+t	plotdata.py	/^t= u1[:,0]$/;"	v
+t	plotdata.py	/^t= y1[:,0]$/;"	v
 t1	controller.py	/^t1 = []$/;"	v
 t1	controllerUFRGS.py	/^t1 = []$/;"	v
 t2	controller.py	/^t2 = []$/;"	v
@@ -397,6 +424,7 @@ t_03	controller.py	/^t_03 = 1$/;"	v
 t_03	controllerUFRGS.py	/^t_03 = 1$/;"	v
 t_04	controller.py	/^t_04 = 1$/;"	v
 t_04	controllerUFRGS.py	/^t_04 = 1$/;"	v
+time0	ensaios/matlab/modulos_opc.m	/^   time0 = 60*(60*x0(4) + x0(5)) + x0(6);$/;"	v
 tread1	controller.py	/^tread1 = []$/;"	v
 tread1	controllerUFRGS.py	/^tread1 = []$/;"	v
 tread2	controller.py	/^tread2 = []$/;"	v
@@ -405,6 +433,7 @@ tread3	controller.py	/^tread3 = []$/;"	v
 tread3	controllerUFRGS.py	/^tread3 = []$/;"	v
 tread4	controller.py	/^tread4 = []$/;"	v
 tread4	controllerUFRGS.py	/^tread4 = []$/;"	v
+ts	ensaios/matlab/modulos_opc.m	/^   ts    = [dt, 0];$/;"	v
 twrite1	controller.py	/^twrite1 = []$/;"	v
 twrite1	controllerUFRGS.py	/^twrite1 = []$/;"	v
 twrite2	controller.py	/^twrite2 = []$/;"	v
@@ -413,10 +442,13 @@ twrite3	controller.py	/^twrite3 = []$/;"	v
 twrite3	controllerUFRGS.py	/^twrite3 = []$/;"	v
 twrite4	controller.py	/^twrite4 = []$/;"	v
 twrite4	controllerUFRGS.py	/^twrite4 = []$/;"	v
+u	ensaios/matlab/modulos_opc.m	/^      u = 0;$/;"	v
 u1	TankSimulationFTufrgs.py	/^u1 = Value('f', 16)  # fluxo de entrada$/;"	v
-u1	TankSimulationOPCUA.py	/^u1 = Value('f', 16)  # fluxo de entrada$/;"	v
+u1	TankSimulationOPCUA.py	/^u1 = Value('f', 0.1)  # fluxo de entrada$/;"	v
 u1	controller.py	/^u1 = Value('f', 0) # sinal de controle do tanque 1$/;"	v
 u1	controllerUFRGS.py	/^u1 = Value('f', 0) # sinal de controle do tanque 1$/;"	v
+u1	plotdata.py	/^u1 = pd.read_csv(".\/ensaios\/matlab\/u1.csv", delimiter=';', decimal=',')$/;"	v
+u1	plotdata.py	/^u1 = u1.to_numpy()$/;"	v
 u2	TankSimulationFTufrgs.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
 u2	TankSimulationOPCUA.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
 u2	controller.py	/^u2 = Value('f', 0) # sinal de controle do tanque 2$/;"	v
@@ -439,12 +471,12 @@ u6	controller.py	/^u6 = Value('f', 0) # sinal de controle do tanque 6$/;"	v
 u6	controllerUFRGS.py	/^u6 = Value('f', 0) # sinal de controle do tanque 6$/;"	v
 update_variable	rbpi.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
 update_variable	ufrgs.py	/^def update_variable(variable, AA: bytes, N: bytes, ser):$/;"	f
-url	controller.py	/^url = "opc.tcp:\/\/192.168.15.19:2124"$/;"	v
+url	controller.py	/^url = "opc.tcp:\/\/192.168.15.20:2194"$/;"	v
 url	controllerUFRGS.py	/^url = "opc.tcp:\/\/143.54.96.127:2194"$/;"	v
-url	controllerUFRGS.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
 url	rbpi.py	/^url = "opc.tcp:\/\/192.168.15.48:2194"$/;"	v
-url	ufrgs.py	/^url = "opc.tcp:\/\/143.54.96.127:2124"$/;"	v
+url	ufrgs.py	/^url = "opc.tcp:\/\/143.54.96.127:2194"$/;"	v
 ustring	old/byte.py	/^ustring = 'A unicode string'$/;"	v
+val	ensaios/matlab/modulos_opc.m	/^   val = read(itm);      % Sensor Selecionado pelo par�metro de entrada "tagout"$/;"	v
 val_update	old/animateexample.py	/^def val_update(val):$/;"	f
 val_update	old/animation.py	/^def val_update(val):$/;"	f
 write_ch	DCON.py	/^def write_ch(AA: bytes, N: bytes, data: bytes, ser):  # Write data to analog output$/;"	f
@@ -452,8 +484,11 @@ write_ch	request.py	/^def write_ch(AA: bytes, N: bytes, data: bytes):  # Write d
 write_ch_ck	request.py	/^def write_ch_ck(AA: bytes, N: bytes, data: bytes):  # Write data to a. output$/;"	f
 x	old/animateexample.py	/^x = list(range(0, 11))$/;"	v
 x	old/animation.py	/^x = list(range(0, 11))$/;"	v
+x0	ensaios/matlab/modulos_opc.m	/^   x0    = clock;$/;"	v
 y	old/animateexample.py	/^y = [10]*11$/;"	v
 y	old/animation.py	/^y = [10]*11$/;"	v
+y1	plotdata.py	/^y1 = pd.read_csv(".\/ensaios\/matlab\/y1.csv", delimiter=';', decimal=',')$/;"	v
+y1	plotdata.py	/^y1 = y1.to_numpy()$/;"	v
 yk_1	TankSimulationFTufrgs.py	/^yk_1 = 0  # condição inicial$/;"	v
 yk_1	TankSimulationOPCUA.py	/^yk_1 = 0  # condição inicial$/;"	v
 yk_1	TankSimulationSER.py	/^yk_1 = 0  # condição inicial$/;"	v

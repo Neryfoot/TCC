@@ -9,7 +9,7 @@ stop_flag = 0 # flag para parar os processos
 
 # Tanque 1
 h1 = Value('f', 0)  # condição inicial de nivel
-u1 = Value('f', 16)  # fluxo de entrada
+u1 = Value('f', 0.1)  # fluxo de entrada
 f1 = Value('f', 0) # vazão de entrada
 # Tanque 2
 h2 = Value('f', 0)  # condição inicial de nivel
@@ -126,6 +126,29 @@ def device03(buffer, ser):  # simulate device behavior
     ser.write(b">\r")
 
 
+# def dynamic1():
+#     global yk_1
+#     global h
+#     yk = h1.value
+#     steps = 0  # condição inicial
+#     tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
+#     while stop_flag == 0:
+#         tn = float("{:.1f}".format(time.time()))  # tempo atual
+#         steps = (tn - tn_1)//h  # número de passos
+#         # print(steps)
+#         tn_1 = tn_1 + steps*h  # atualiza o tempo
+#         if steps > 0:
+#             while(steps > 0):  # executa atualização da função
+#                 yk = 0.00304*u1.value + 0.997*yk_1
+#                 if yk < 0:  # nível não pode baixar de 0
+#                     yk = 0
+#                 if yk > 20:  # nível não passa de 20
+#                     yk = 20
+#                 yk_1 = yk
+#                 steps -= 1
+#         h1.value = yk
+
+
 def dynamic1():
     global yk_1
     global h
@@ -139,129 +162,15 @@ def dynamic1():
         tn_1 = tn_1 + steps*h  # atualiza o tempo
         if steps > 0:
             while(steps > 0):  # executa atualização da função
-                yk = 0.4988*u1.value/20 + 0.995*yk_1
+                # yk = 0.0025*u1.value + 0.9973*yk_1
+                yk = 0.0002128*u1.value + 0.99973*yk_1
                 if yk < 0:  # nível não pode baixar de 0
                     yk = 0
-                if yk > 100:  # nível não passa de 100
-                    yk = 100
+                if yk > 20:  # nível não passa de 20
+                    yk = 20
                 yk_1 = yk
                 steps -= 1
         h1.value = yk
-
-
-def dynamic2():
-    global yk_1
-    global h
-    yk = h2.value*0.5/100
-    steps = 0  # condição inicial
-    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
-    while stop_flag == 0:
-        tn = float("{:.1f}".format(time.time()))  # tempo atual
-        steps = (tn - tn_1)//h  # número de passos
-        # print(steps)
-        tn_1 = tn_1 + steps*h  # atualiza o tempo
-        if steps > 0:
-            while(steps > 0):  # executa atualização da função
-                yk = 0.004*u2.value + 0.96*yk_1
-                if yk < 0:  # nível não pode baixar de 0
-                    yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
-                yk_1 = yk
-                steps -= 1
-        h2.value = yk*100/0.5
-
-
-def dynamic3():
-    global yk_1
-    global h
-    yk = h3.value*0.5/100
-    steps = 0  # condição inicial
-    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
-    while stop_flag == 0:
-        tn = float("{:.1f}".format(time.time()))  # tempo atual
-        steps = (tn - tn_1)//h  # número de passos
-        # print(steps)
-        tn_1 = tn_1 + steps*h  # atualiza o tempo
-        if steps > 0:
-            while(steps > 0):  # executa atualização da função
-                yk = 0.004*u3.value + 0.96*yk_1
-                if yk < 0:  # nível não pode baixar de 0
-                    yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
-                yk_1 = yk
-                steps -= 1
-        h3.value = yk*100/0.5
-
-
-def dynamic4():
-    global yk_1
-    global h
-    yk = h4.value*0.5/100
-    steps = 0  # condição inicial
-    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
-    while stop_flag == 0:
-        tn = float("{:.1f}".format(time.time()))  # tempo atual
-        steps = (tn - tn_1)//h  # número de passos
-        # print(steps)
-        tn_1 = tn_1 + steps*h  # atualiza o tempo
-        if steps > 0:
-            while(steps > 0):  # executa atualização da função
-                yk = 0.004*u4.value + 0.96*yk_1
-                if yk < 0:  # nível não pode baixar de 0
-                    yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
-                yk_1 = yk
-                steps -= 1
-        h4.value = yk*100/0.5
-
-
-def dynamic5():
-    global yk_1
-    global h
-    yk = h5.value*0.5/100
-    steps = 0  # condição inicial
-    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
-    while stop_flag == 0:
-        tn = float("{:.1f}".format(time.time()))  # tempo atual
-        steps = (tn - tn_1)//h  # número de passos
-        # print(steps)
-        tn_1 = tn_1 + steps*h  # atualiza o tempo
-        if steps > 0:
-            while(steps > 0):  # executa atualização da função
-                yk = 0.004*u5.value + 0.96*yk_1
-                if yk < 0:  # nível não pode baixar de 0
-                    yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
-                yk_1 = yk
-                steps -= 1
-        h5.value = yk*100/0.5
-
-
-def dynamic6():
-    global yk_1
-    global h
-    yk = h1.value*0.5/100
-    steps = 0  # condição inicial
-    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
-    while stop_flag == 0:
-        tn = float("{:.1f}".format(time.time()))  # tempo atual
-        steps = (tn - tn_1)//h  # número de passos
-        # print(steps)
-        tn_1 = tn_1 + steps*h  # atualiza o tempo
-        if steps > 0:
-            while(steps > 0):  # executa atualização da função
-                yk = 0.004*u6.value + 0.96*yk_1
-                if yk < 0:  # nível não pode baixar de 0
-                    yk = 0
-                if yk > 0.5:  # nível não passa de 0.5
-                    yk = 0.5
-                yk_1 = yk
-                steps -= 1
-        h6.value = yk*100/0.5
 
 
 
