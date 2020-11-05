@@ -8,15 +8,24 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
 Application	old/serialGUI.py	/^class Application(Frame):$/;"	c
 BIGGER_SIZE	plotdata.py	/^BIGGER_SIZE = 20$/;"	v
+C	controldesign.py	/^C = ctrl.tf([2*alpha*kp*kd, (kp*ki*kd*alpha+1), kp*ki], [kd*alpha, 1, 0])$/;"	v
+C	controldesign.py	/^C = ctrl.tf([kd*kp*alpha+kp*kd, (kp*kd*ki*alpha + kp), kp*ki], [alpha*kd, 1, 0])$/;"	v
+C	controldesign.py	/^C = ctrl.tf([kd*kp+alpha*kp, (ki*alpha*kp + kp), kp*ki], [alpha, 1, 0])$/;"	v
 C	controldesing.py	/^C = ctrl.tf([2*alpha*kp*kd, (kp*ki*kd*alpha+1), kp*ki], [kd*alpha, 1, 0])$/;"	v
 C	controldesing.py	/^C = ctrl.tf([kd*kp+alpha*kp, (ki*alpha*kp + kp), kp*ki], [alpha, 1, 0])$/;"	v
+Cd	controldesign.py	/^Cd = ctrl.sample_system(C, 1, method='zoh')$/;"	v
+Cd	controldesign.py	/^Cd = ctrl.sample_system(C, 1\/15, method='zoh')$/;"	v
 Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 1, method='zoh')$/;"	v
 Cd	controldesing.py	/^Cd = ctrl.sample_system(C, 1\/15, method='zoh')$/;"	v
 Fin	TankSimulationSER.py	/^Fin = Value('f', 4.0)  # fluxo de entrada$/;"	v
 Fin	old/AnimatedTank.py	/^Fin = Value('f', 2.5)  # fluxo de entrada$/;"	v
 Fin_update	old/AnimatedTank.py	/^def Fin_update(val):$/;"	f
+G	controldesign.py	/^G = ctrl.tf(0.638569, [300, 1])$/;"	v
+G	controldesign.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
 G	controldesing.py	/^G = ctrl.tf(0.638569, [300, 1])$/;"	v
 G	controldesing.py	/^G = ctrl.tf(100\/2, [1, 1\/2])$/;"	v
+Gd	controldesign.py	/^Gd = ctrl.sample_system(G, 0.1, method='matched')$/;"	v
+Gd	controldesign.py	/^Gd = ctrl.sample_system(G, 0.1, method='zoh')$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='matched')$/;"	v
 Gd	controldesing.py	/^Gd = ctrl.sample_system(G, 0.1, method='zoh')$/;"	v
 MEDIUM_SIZE	plotdata.py	/^MEDIUM_SIZE = 18$/;"	v
@@ -50,6 +59,8 @@ a	device.py	/^a = device02()     # write a string$/;"	v
 a	sub.py	/^a = ">>>12344++34456.++23))"$/;"	v
 addspace	rbpi.py	/^addspace = server.register_namespace(name)$/;"	v
 addspace	ufrgs.py	/^addspace = server.register_namespace(name)$/;"	v
+alpha	controldesign.py	/^alpha = .1$/;"	v
+alpha	controldesign.py	/^alpha = 0.1$/;"	v
 alpha	controldesing.py	/^alpha = 0.1$/;"	v
 app	old/serialGUI.py	/^app = Application(master=root)$/;"	v
 ax	controller.py	/^fig, ax = plt.subplots()$/;"	v
@@ -95,6 +106,7 @@ controller1	controllerUFRGS.py	/^def controller1():$/;"	f
 controller2	controller.py	/^def controller2():$/;"	f
 controller2	controllerUFRGS.py	/^def controller2():$/;"	f
 createWidgets	old/serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
+ctrl	controldesign.py	/^import control as ctrl$/;"	I
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
 da	ensaios/matlab/modulos_opc.m	/^   da = opcda(machine, server);$/;"	v
 data	sub.py	/^data = re.sub("[^0-9^.]", "", a)$/;"	v
@@ -215,10 +227,16 @@ interface_process	old/AnimatedTank.py	/^interface_process = Process(target=inter
 isfloat	old/serialGUI.py	/^def isfloat(x):$/;"	f
 itm	ensaios/matlab/modulos_opc.m	/^   itm = additem(grp, tagin);$/;"	v
 itm	ensaios/matlab/modulos_opc.m	/^   itm = additem(grp, tagout);$/;"	v
+kd	controldesign.py	/^kd = 1$/;"	v
+kd	controldesign.py	/^kd = 2$/;"	v
 kd	controldesing.py	/^kd = 1$/;"	v
 kd	controldesing.py	/^kd = 2$/;"	v
+ki	controldesign.py	/^ki= 0.075$/;"	v
+ki	controldesign.py	/^ki= 0.1$/;"	v
 ki	controldesing.py	/^ki= 0.075$/;"	v
 ki	controldesing.py	/^ki= 0.1$/;"	v
+kp	controldesign.py	/^kp = 2.5$/;"	v
+kp	controldesign.py	/^kp = 5.5$/;"	v
 kp	controldesing.py	/^kp = 2.5$/;"	v
 kp	controldesing.py	/^kp = 5.5$/;"	v
 lvl	rbpi.py	/^lvl = node.add_object(addspace, "Level Sensors")$/;"	v
@@ -277,6 +295,7 @@ node	rbpi.py	/^node = server.get_objects_node()$/;"	v
 node	ufrgs.py	/^node = server.get_objects_node()$/;"	v
 np	TankSimulationFTufrgs.py	/^import numpy as np$/;"	I
 np	TankSimulationOPCUA.py	/^import numpy as np$/;"	I
+np	controldesign.py	/^import numpy as np$/;"	I
 np	controldesing.py	/^import numpy as np$/;"	I
 np	controller.py	/^import numpy as np$/;"	I
 np	controllerUFRGS.py	/^import numpy as np$/;"	I
@@ -284,6 +303,7 @@ np	plotdata.py	/^import numpy as np$/;"	I
 p	old/animateexample.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
 p	old/animation.py	/^p, = plt.plot(x, y, linewidth=2, color='blue')$/;"	v
 pd	plotdata.py	/^import pandas as pd$/;"	I
+plt	controldesign.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controldesing.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controller.py	/^import matplotlib.pyplot as plt$/;"	I
 plt	controllerUFRGS.py	/^import matplotlib.pyplot as plt$/;"	I
@@ -381,6 +401,7 @@ slider1	old/animateexample.py	/^slider1 = Slider(axSlider1, 'Slider1', valmin=0,
 slider2	old/animateexample.py	/^slider2 = Slider($/;"	v
 slider2	old/animation.py	/^slider2 = Slider($/;"	v
 start_server	server.py	/^def start_server(url):$/;"	f
+step	controldesign.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 step	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 stop_flag	TankSimulationFTufrgs.py	/^stop_flag = 0 # flag para parar os processos$/;"	v
 stop_flag	TankSimulationFTufrgs.py	/^stop_flag = 0$/;"	v
@@ -400,6 +421,8 @@ str	ensaios/matlab/modulos_opc.m	/^   str   = [];$/;"	v
 sys	ensaios/matlab/modulos_opc.m	/^   sys    = [];$/;"	v
 sys	ensaios/matlab/modulos_opc.m	/^   sys = [];$/;"	v
 sys	ensaios/matlab/modulos_opc.m	/^   sys = clock;$/;"	v
+t	controldesign.py	/^t = np.arange(0, 50, 0.01)$/;"	v
+t	controldesign.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 t	controldesing.py	/^t = np.arange(0, 50, 0.01)$/;"	v
 t	controldesing.py	/^t, step = ctrl.step_response(G, t)$/;"	v
 t	plotdata.py	/^t= np.arange(len(mv))$/;"	v
