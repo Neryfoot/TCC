@@ -51,6 +51,7 @@ REF2	controller.py	/^REF2 = []$/;"	v
 REF2	controllerUFRGS.py	/^REF2 = []$/;"	v
 REF3	controller.py	/^REF3 = []$/;"	v
 REF3	controllerUFRGS.py	/^REF3 = []$/;"	v
+REF4	controller.py	/^REF4 = []$/;"	v
 Refresher	old/serialGUI.py	/^    def Refresher(self):$/;"	m	class:Application
 SMALL_SIZE	plotdata.py	/^SMALL_SIZE = 12$/;"	v
 V_cc	old/serialGUI.py	/^V_cc = 4.97	# This is the ADC's positive reference voltage$/;"	v
@@ -105,6 +106,8 @@ controller1	controller.py	/^def controller1():$/;"	f
 controller1	controllerUFRGS.py	/^def controller1():$/;"	f
 controller2	controller.py	/^def controller2():$/;"	f
 controller2	controllerUFRGS.py	/^def controller2():$/;"	f
+controller3	controller.py	/^def controller3():$/;"	f
+controller4	controller.py	/^def controller4():$/;"	f
 createWidgets	old/serialGUI.py	/^    def createWidgets(self):$/;"	m	class:Application
 ctrl	controldesign.py	/^import control as ctrl$/;"	I
 ctrl	controldesing.py	/^import control as ctrl$/;"	I
@@ -124,14 +127,20 @@ dynamic	old/AnimatedTank.py	/^def dynamic():$/;"	f
 dynamic1	TankSimulationFTufrgs.py	/^def dynamic1():$/;"	f
 dynamic1	TankSimulationOPCUA.py	/^def dynamic1():$/;"	f
 dynamic2	TankSimulationFTufrgs.py	/^def dynamic2():$/;"	f
+dynamic2	TankSimulationOPCUA.py	/^def dynamic2():$/;"	f
 dynamic3	TankSimulationFTufrgs.py	/^def dynamic3():$/;"	f
+dynamic3	TankSimulationOPCUA.py	/^def dynamic3():$/;"	f
 dynamic4	TankSimulationFTufrgs.py	/^def dynamic4():$/;"	f
+dynamic4	TankSimulationOPCUA.py	/^def dynamic4():$/;"	f
 dynamic5	TankSimulationFTufrgs.py	/^def dynamic5():$/;"	f
 dynamic6	TankSimulationFTufrgs.py	/^def dynamic6():$/;"	f
 dynamic_process	TankSimulationSER.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process	old/AnimatedTank.py	/^dynamic_process = Process(target=dynamic)$/;"	v
 dynamic_process1	TankSimulationFTufrgs.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
 dynamic_process1	TankSimulationOPCUA.py	/^dynamic_process1 = Process(target=dynamic1)$/;"	v
+dynamic_process2	TankSimulationOPCUA.py	/^dynamic_process2 = Process(target=dynamic2)$/;"	v
+dynamic_process3	TankSimulationOPCUA.py	/^dynamic_process3 = Process(target=dynamic3)$/;"	v
+dynamic_process4	TankSimulationOPCUA.py	/^dynamic_process4 = Process(target=dynamic4)$/;"	v
 e_1	old/controllerold.py	/^e_1 = 0$/;"	v
 e_11	controller.py	/^e_11 = 0$/;"	v
 e_11	controllerUFRGS.py	/^e_11 = 0$/;"	v
@@ -153,11 +162,11 @@ exit_protocol	old/serialGUI.py	/^    def exit_protocol(self):$/;"	m	class:Applic
 f1	TankSimulationFTufrgs.py	/^f1 = Value('f', 0) # vazão de entrada$/;"	v
 f1	TankSimulationOPCUA.py	/^f1 = Value('f', 0) # vazão de entrada$/;"	v
 f2	TankSimulationFTufrgs.py	/^f2 = Value('f', 1) # vazão de entrada$/;"	v
-f2	TankSimulationOPCUA.py	/^f2 = Value('f', 1) # vazão de entrada$/;"	v
+f2	TankSimulationOPCUA.py	/^f2 = Value('f', 0) # vazão de entrada$/;"	v
 f3	TankSimulationFTufrgs.py	/^f3 = Value('f', 2) # vazão de entrada$/;"	v
-f3	TankSimulationOPCUA.py	/^f3 = Value('f', 2) # vazão de entrada$/;"	v
+f3	TankSimulationOPCUA.py	/^f3 = Value('f', 0) # vazão de entrada$/;"	v
 f4	TankSimulationFTufrgs.py	/^f4 = Value('f', 3) # vazão de entrada$/;"	v
-f4	TankSimulationOPCUA.py	/^f4 = Value('f', 3) # vazão de entrada$/;"	v
+f4	TankSimulationOPCUA.py	/^f4 = Value('f', 0) # vazão de entrada$/;"	v
 fig	controller.py	/^fig, ax = plt.subplots()$/;"	v
 fig	controllerUFRGS.py	/^fig, ax = plt.subplots()$/;"	v
 fig	old/animateexample.py	/^fig, ax = plt.subplots()$/;"	v
@@ -286,7 +295,8 @@ module2_ch4	request.py	/^module2_ch4 = read_ch(b"05", b"4") $/;"	v
 module2_ch5	request.py	/^module2_ch5 = read_ch(b"05", b"5") $/;"	v
 modulos_opc	ensaios/matlab/modulos_opc.m	/^function  [sys,x0,str,ts]  = modulos_opc(t,x,u,flag,dt,machine,server,tagin,tagout)$/;"	f
 mv	plotdata.py	/^mv=0$/;"	v
-mv	plotdata.py	/^mv=np.loadtxt('.\/simulação\/ensaio3\/MV1.txt')$/;"	v
+mv	plotdata.py	/^mv=mv[:2236]$/;"	v
+mv	plotdata.py	/^mv=np.loadtxt('.\/simulação\/4tanks\/MV1.txt')$/;"	v
 mv	plotdata.py	/^mv=u1[:,1]$/;"	v
 name	rbpi.py	/^name = "OPC UA DEQUI"$/;"	v
 name	ufrgs.py	/^name = "OPC UA DEQUI"$/;"	v
@@ -347,7 +357,8 @@ pump6	ufrgs.py	/^pump6 = pump.add_variable(addspace, "PUMP6", 0.0)$/;"	v
 pumps	old/controllerold.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
 pumps	rbpi.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
 pumps	ufrgs.py	/^pumps = [pump1, pump2, pump3, pump4, pump5, pump6]$/;"	v
-pv	plotdata.py	/^pv=np.loadtxt('.\/simulação\/ensaio3\/PV1.txt')$/;"	v
+pv	plotdata.py	/^pv=np.loadtxt('.\/simulação\/4tanks\/PV1.txt')$/;"	v
+pv	plotdata.py	/^pv=pv[:2236]$/;"	v
 pv	plotdata.py	/^pv=y1[:,1]$/;"	v
 read_ch	DCON.py	/^def read_ch(AA: bytes, N: bytes, ser):  # Read sthe analog input$/;"	f
 read_ch	device.py	/^def read_ch(AA: hex, N: hex):  # Readsthe analog input$/;"	f
@@ -382,6 +393,12 @@ results1	controller.py	/^results1 = np.vstack((t1, PV1, MV1, tread1))$/;"	v
 results1	controller.py	/^results1 = results1.transpose()$/;"	v
 results1	controllerUFRGS.py	/^results1 = np.vstack((t1, PV1, MV1, tread1))$/;"	v
 results1	controllerUFRGS.py	/^results1 = results1.transpose()$/;"	v
+results2	controller.py	/^results2 = np.vstack((t2, PV2, MV2, tread2))$/;"	v
+results2	controller.py	/^results2 = results2.transpose()$/;"	v
+results3	controller.py	/^results3 = np.vstack((t3, PV3, MV3, tread3))$/;"	v
+results3	controller.py	/^results3 = results3.transpose()$/;"	v
+results4	controller.py	/^results4 = np.vstack((t4, PV4, MV4, tread4))$/;"	v
+results4	controller.py	/^results4 = results4.transpose()$/;"	v
 root	old/serialGUI.py	/^root = Tk()$/;"	v
 say_msg	old/serialGUI.py	/^    def say_msg(self):$/;"	m	class:Application
 ser	TankSimulationFTufrgs.py	/^ser = serial.Serial('\/dev\/ttyUSB0', 9600, timeout=1)  # open serial port$/;"	v
@@ -440,12 +457,9 @@ t_01	controller.py	/^t_01 = 0$/;"	v
 t_01	controller.py	/^t_01 = time.time()$/;"	v
 t_01	controllerUFRGS.py	/^t_01 = 0$/;"	v
 t_01	controllerUFRGS.py	/^t_01 = time.time()$/;"	v
-t_02	controller.py	/^t_02 = 1$/;"	v
 t_02	controllerUFRGS.py	/^t_02 = 1$/;"	v
 t_02	controllerUFRGS.py	/^t_02 = time.time()$/;"	v
-t_03	controller.py	/^t_03 = 1$/;"	v
 t_03	controllerUFRGS.py	/^t_03 = 1$/;"	v
-t_04	controller.py	/^t_04 = 1$/;"	v
 t_04	controllerUFRGS.py	/^t_04 = 1$/;"	v
 time0	ensaios/matlab/modulos_opc.m	/^   time0 = 60*(60*x0(4) + x0(5)) + x0(6);$/;"	v
 tread1	controller.py	/^tread1 = []$/;"	v
@@ -473,15 +487,15 @@ u1	controllerUFRGS.py	/^u1 = Value('f', 0) # sinal de controle do tanque 1$/;"	v
 u1	plotdata.py	/^u1 = pd.read_csv(".\/ensaios\/matlab\/u1.csv", delimiter=';', decimal=',')$/;"	v
 u1	plotdata.py	/^u1 = u1.to_numpy()$/;"	v
 u2	TankSimulationFTufrgs.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
-u2	TankSimulationOPCUA.py	/^u2 = Value('f', 3.5)  # fluxo de entrada$/;"	v
+u2	TankSimulationOPCUA.py	/^u2 = Value('f', 0.1)  # fluxo de entrada$/;"	v
 u2	controller.py	/^u2 = Value('f', 0) # sinal de controle do tanque 2$/;"	v
 u2	controllerUFRGS.py	/^u2 = Value('f', 0) # sinal de controle do tanque 2$/;"	v
 u3	TankSimulationFTufrgs.py	/^u3 = Value('f', 3.0)  # fluxo de entrada$/;"	v
-u3	TankSimulationOPCUA.py	/^u3 = Value('f', 3.0)  # fluxo de entrada$/;"	v
+u3	TankSimulationOPCUA.py	/^u3 = Value('f', 0.1)  # fluxo de entrada$/;"	v
 u3	controller.py	/^u3 = Value('f', 0) # sinal de controle do tanque 3$/;"	v
 u3	controllerUFRGS.py	/^u3 = Value('f', 0) # sinal de controle do tanque 3$/;"	v
 u4	TankSimulationFTufrgs.py	/^u4 = Value('f', 2.5)  # fluxo de entrada$/;"	v
-u4	TankSimulationOPCUA.py	/^u4 = Value('f', 2.5)  # fluxo de entrada$/;"	v
+u4	TankSimulationOPCUA.py	/^u4 = Value('f', 0.1)  # fluxo de entrada$/;"	v
 u4	controller.py	/^u4 = Value('f', 0) # sinal de controle do tanque 4$/;"	v
 u4	controllerUFRGS.py	/^u4 = Value('f', 0) # sinal de controle do tanque 4$/;"	v
 u5	TankSimulationFTufrgs.py	/^u5 = Value('f', 2.0)  # fluxo de entrada$/;"	v
@@ -521,14 +535,17 @@ yk_11	controller.py	/^yk_11 = 0$/;"	v
 yk_11	controllerUFRGS.py	/^yk_11 = 0$/;"	v
 yk_12	controller.py	/^yk_12 = 0$/;"	v
 yk_12	controllerUFRGS.py	/^yk_12 = 0$/;"	v
+yk_21	TankSimulationOPCUA.py	/^yk_21 = 0  # condição inicial$/;"	v
 yk_21	controller.py	/^yk_21 = 0$/;"	v
 yk_21	controllerUFRGS.py	/^yk_21 = 0$/;"	v
 yk_22	controller.py	/^yk_22 = 0$/;"	v
 yk_22	controllerUFRGS.py	/^yk_22 = 0$/;"	v
+yk_31	TankSimulationOPCUA.py	/^yk_31 = 0  # condição inicial$/;"	v
 yk_31	controller.py	/^yk_31 = 0$/;"	v
 yk_31	controllerUFRGS.py	/^yk_31 = 0$/;"	v
 yk_32	controller.py	/^yk_32 = 0$/;"	v
 yk_32	controllerUFRGS.py	/^yk_32 = 0$/;"	v
+yk_41	TankSimulationOPCUA.py	/^yk_41 = 0  # condição inicial$/;"	v
 yk_41	controller.py	/^yk_41 = 0$/;"	v
 yk_41	controllerUFRGS.py	/^yk_41 = 0$/;"	v
 yk_42	controller.py	/^yk_42 = 0$/;"	v

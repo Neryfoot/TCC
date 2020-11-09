@@ -22,8 +22,10 @@ plt.rc('figure', titlesize=BIGGER_SIZE)
 u1 = pd.read_csv("./ensaios/matlab/u1.csv", delimiter=';', decimal=',')
 y1 = pd.read_csv("./ensaios/matlab/y1.csv", delimiter=';', decimal=',')
 mv=0
-mv=np.loadtxt('./simulação/ensaio3/MV1.txt')
-pv=np.loadtxt('./simulação/ensaio3/PV1.txt')
+mv=np.loadtxt('./simulação/4tanks/MV1.txt')
+pv=np.loadtxt('./simulação/4tanks/PV1.txt')
+mv=mv[:2236]
+pv=pv[:2236]
 t= np.arange(len(mv))
 t
 u1 = u1.to_numpy()
@@ -40,20 +42,66 @@ for i in range(len(t)):
 fig, ax = plt.subplots()
 
 ax.plot(t/60, mv, color="green")
-ax.set(xlabel='tempo (min)', ylabel='sinal de controle (mA)', title='Sinal de controle')
+ax.set(xlabel='tempo (min)', ylabel='sinal de controle (mA)', title='Sinal de controle 1')
 ax.grid()
 
-fig.savefig("u1.png")
+fig.savefig("MV1.png")
 plt.show()
 
 fig, ax = plt.subplots()
-
 ax.plot(t/60, pv)
-ax.set(xlabel='tempo (min)', ylabel='nível do tanque (cm)', title='Nível')
+ax.set(xlabel='tempo (min)', ylabel='nível do tanque (cm)', title='Nível do tanque 1')
 ax.grid()
 
-fig.savefig("y1.png")
+fig.savefig("PV1.png")
 plt.show()
-plt.clf()
+
+
+ax.plot(t/60, mv, color="green")
+ax.set(xlabel='tempo (min)', ylabel='sinal de controle (mA)', title='Sinal de controle 2')
+ax.grid()
+
+fig.savefig("MV2.png")
+plt.show()
+
+fig, ax = plt.subplots()
+ax.plot(t/60, pv)
+ax.set(xlabel='tempo (min)', ylabel='nível do tanque (cm)', title='Nível do tanque 2')
+ax.grid()
+
+fig.savefig("PV2.png")
+plt.show()
+
+
+ax.plot(t/60, mv, color="green")
+ax.set(xlabel='tempo (min)', ylabel='sinal de controle (mA)', title='Sinal de controle 3')
+ax.grid()
+
+fig.savefig("MV3.png")
+plt.show()
+
+fig, ax = plt.subplots()
+ax.plot(t/60, pv)
+ax.set(xlabel='tempo (min)', ylabel='nível do tanque (cm)', title='Nível do tanque 3')
+ax.grid()
+
+fig.savefig("PV3.png")
+plt.show()
+
+
+ax.plot(t/60, mv, color="green")
+ax.set(xlabel='tempo (min)', ylabel='sinal de controle (mA)', title='Sinal de controle 4')
+ax.grid()
+
+fig.savefig("MV4.png")
+plt.show()
+
+fig, ax = plt.subplots()
+ax.plot(t/60, pv)
+ax.set(xlabel='tempo (min)', ylabel='nível do tanque (cm)', title='Nível do tanque 4')
+ax.grid()
+
+fig.savefig("PV4.png")
+plt.show()
 
 

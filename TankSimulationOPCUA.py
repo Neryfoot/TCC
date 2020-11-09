@@ -5,6 +5,9 @@ import numpy as np
 
 h = 0.1  # passo da solução numérica
 yk_1 = 0  # condição inicial
+yk_21 = 0  # condição inicial
+yk_31 = 0  # condição inicial
+yk_41 = 0  # condição inicial
 stop_flag = 0 # flag para parar os processos
 
 # Tanque 1
@@ -13,16 +16,16 @@ u1 = Value('f', 0.1)  # fluxo de entrada
 f1 = Value('f', 0) # vazão de entrada
 # Tanque 2
 h2 = Value('f', 0)  # condição inicial de nivel
-u2 = Value('f', 3.5)  # fluxo de entrada
-f2 = Value('f', 1) # vazão de entrada
+u2 = Value('f', 0.1)  # fluxo de entrada
+f2 = Value('f', 0) # vazão de entrada
 # Tanque 3
 h3 = Value('f', 0)  # condição inicial de nivel
-u3 = Value('f', 3.0)  # fluxo de entrada
-f3 = Value('f', 2) # vazão de entrada
+u3 = Value('f', 0.1)  # fluxo de entrada
+f3 = Value('f', 0) # vazão de entrada
 # Tanque 4
 h4 = Value('f', 0)  # condição inicial de nivel
-u4 = Value('f', 2.5)  # fluxo de entrada
-f4 = Value('f', 3) # vazão de entrada
+u4 = Value('f', 0.1)  # fluxo de entrada
+f4 = Value('f', 0) # vazão de entrada
 
 # Tanque 5 e 6 não têm medidor de vazão
 h5 = Value('f', 0)  # condição inicial de nivel
@@ -173,27 +176,98 @@ def dynamic1():
         h1.value = yk
 
 
+def dynamic2():
+    global yk_21
+    global h
+    yk = h2.value
+    steps = 0  # condição inicial
+    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
+    while stop_flag == 0:
+        tn = float("{:.1f}".format(time.time()))  # tempo atual
+        steps = (tn - tn_1)//h  # número de passos
+        # print(steps)
+        tn_1 = tn_1 + steps*h  # atualiza o tempo
+        if steps > 0:
+            while(steps > 0):  # executa atualização da função
+                # yk = 0.0025*u1.value + 0.9973*yk_1
+                yk = 0.0002128*u2.value + 0.99973*yk_21
+                if yk < 0:  # nível não pode baixar de 0
+                    yk = 0
+                if yk > 20:  # nível não passa de 20
+                    yk = 20
+                yk_21 = yk
+                steps -= 1
+        h2.value = yk
+
+
+def dynamic3():
+    global yk_31
+    global h
+    yk = h3.value
+    steps = 0  # condição inicial
+    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
+    while stop_flag == 0:
+        tn = float("{:.1f}".format(time.time()))  # tempo atual
+        steps = (tn - tn_1)//h  # número de passos
+        # print(steps)
+        tn_1 = tn_1 + steps*h  # atualiza o tempo
+        if steps > 0:
+            while(steps > 0):  # executa atualização da função
+                # yk = 0.0025*u1.value + 0.9973*yk_1
+                yk = 0.0002128*u3.value + 0.99973*yk_31
+                if yk < 0:  # nível não pode baixar de 0
+                    yk = 0
+                if yk > 20:  # nível não passa de 20
+                    yk = 20
+                yk_31 = yk
+                steps -= 1
+        h3.value = yk
+
+
+def dynamic4():
+    global yk_41
+    global h
+    yk = h4.value
+    steps = 0  # condição inicial
+    tn_1 = float("{:.1f}".format(time.time()))  # condição inicial
+    while stop_flag == 0:
+        tn = float("{:.1f}".format(time.time()))  # tempo atual
+        steps = (tn - tn_1)//h  # número de passos
+        # print(steps)
+        tn_1 = tn_1 + steps*h  # atualiza o tempo
+        if steps > 0:
+            while(steps > 0):  # executa atualização da função
+                # yk = 0.0025*u1.value + 0.9973*yk_1
+                yk = 0.0002128*u4.value + 0.99973*yk_41
+                if yk < 0:  # nível não pode baixar de 0
+                    yk = 0
+                if yk > 20:  # nível não passa de 20
+                    yk = 20
+                yk_41 = yk
+                steps -= 1
+        h4.value = yk
+
 
 dynamic_process1 = Process(target=dynamic1)
-# dynamic_process2 = Process(target=dynamic2)
-# dynamic_process3 = Process(target=dynamic3)
-# dynamic_process4 = Process(target=dynamic4)
+dynamic_process2 = Process(target=dynamic2)
+dynamic_process3 = Process(target=dynamic3)
+dynamic_process4 = Process(target=dynamic4)
 # dynamic_process5 = Process(target=dynamic5)
 # dynamic_process6 = Process(target=dynamic6)
 com_process = Process(target=communication, args=(ser,))
 com_process.start()
 dynamic_process1.start()
-# dynamic_process2.start()
-# dynamic_process3.start()
-# dynamic_process4.start()
+dynamic_process2.start()
+dynamic_process3.start()
+dynamic_process4.start()
 # dynamic_process5.start()
 # dynamic_process6.start()ess1.start()
 stop_flag = 1
 stop_flag = 0
 dynamic_process1.terminate()
-# dynamic_process2.terminate()
-# dynamic_process3.terminate()
-# dynamic_process4.terminate()
+dynamic_process2.terminate()
+dynamic_process3.terminate()
+dynamic_process4.terminate()
 # dynamic_process5.terminate()
 # dynamic_process6.terminate()
 com_process.terminate()
